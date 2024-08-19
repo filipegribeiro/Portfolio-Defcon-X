@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="/script.js"></script>
+		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+		<title>Filipe Ribeiro</title>
+	</head>
+	<body>
+		<header class="header" id="header">
+			<a id="logo" href="/home.html" class="logo">Portfolio</a>
+			<!-- ************* NAVIGATION ************* -->
+
+			<nav id="nav" class="navbar">
+				<button aria-label="Abrir Menu" id="btn-mobile" aria_haspopup="true" aria-controls="menu" aria-expanded="false">
+					Menu
+					<span id="hamburger"></span>
+				</button>
+				<ul id="menu" role="menu">
+					<li><a href="#" class="acive" aria-label="Home section">Home</a></li>
+					<li><a href="#about" aria-label="About section">About</a></li>
+					<li><a href="#myskills" aria-label=" Services section">My Skills</a></li>
+					<li><a href="#portfolio" aria-label=" Portfolio section">Projects</a></li>
+					<li><a href="#contactme" aria-label="Contacts section">Contact Me</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<!-- ************* HERO | Home ************* -->
+			<section class="home">
+				<div class="home-content">
+					<h1>Hi, I'm <span class="color">F</span>ilipe <span class="color"> R</span>ibeiro</h1>
+					<h3>And I'm a <span class="multiple-text" id="text-changed"> Junior Fullstack Web Developer</span></h3>
+					<p>Junior developer and a strong desire to learn more <span>_</span></p>
+					<div class="btn-box">
+						<a href="#portfolio">Hire me</a>
+						<a href="#contactme">Let's talk?</a>
+					</div>
+				</div>
+
+				<div class="home-sci">
+					<a href="https://www.linkedin.com/in/filipegribeiro/" target="_blank" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"></i></a>
+					<a href="https://github.com/filipegribeiro" target="_blank" aria-label="Github"><i class="bx bxl-github"></i></a>
+					<a href="https://www.instagram.com/filipegribeiro/" target="_blank" aria-label="Instagram"><i class="bx bxl-instagram-alt"></i></a>
+				</div>
+
+				<!-- <span class="home-imgHover">
+					<img src="/imgs/Home sem background.png" alt=" It's a photo of Filipe Ribeiro in a professional pose, confident, relaxed, with a friendly and humble smile." />
+				</span> -->
+			</section>
+			<!-- ************* ABOUT ************* -->
+			<section id="about" class="about">
+				<div class="about-content">
+					<h2 class="sub-title-about">About <span class="multiple-text-about">Me</span></h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corporis fugiat explicabo obcaecati inventore temporibus velit atque.</p>
+				</div>
+			</section>
+			<!-- ************* MY SKILLS ************* -->
+			<!-- <h1 class="sub-title">My <span class="multiple-text">Skills</span></h1> -->
+			<section class="myskills" id="myskills">
+				<h1 class="sub-title-skills">My <span class="multiple-text-skills">Skills</span></h1>
+				<div class="main-container">
+					<div class="action-container">
+						<h1 class="heading1">Main technical skills</h1>
+						<div class="technical-bars">
+							<div class="bar">
+								<i class="bx bxl-html5" style="color: #c95d2e"></i>
+								<div class="info">
+									<span>HTML</span>
+								</div>
+								<div class="progress-line html">
+									<span></span>
+								</div>
+							</div>
+							<div class="bar">
+								<i class="bx bxl-css3" style="color: #147bbc"></i>
+								<div class="info">
+									<span>CSS</span>
+								</div>
+								<div class="progress-line css">
+									<span></span>
+								</div>
+							</div>
+							<div class="bar">
+								<i class="bx bxl-javascript" style="color: #b0bc1e"></i>
+								<div class="info">
+									<span>Javascript</span>
+								</div>
+								<div class="progress-line javascript">
+									<span></span>
+								</div>
+							</div>
+							<div class="bar">
+								<i class="bx bxl-nodejs" style="color: #68a063"></i>
+								<div class="info">
+									<span>NodeJS / Express.JS</span>
+								</div>
+								<div class="progress-line nodejs">
+									<span></span>
+								</div>
+							</div>
+							<div class="bar">
+								<i class="bx bxl-mongodb" style="color: #4db33d"></i>
+								<div class="info">
+									<span>MongoDB</span>
+								</div>
+								<div class="progress-line mongodb">
+									<span></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="action-container">
+						<h1 class="heading1">Professional Skills</h1>
+						<div class="radial-bars">
+							<div class="radial-bar">
+								<svg x="0px" y="0px" viewBox="0 0 200 200">
+									<circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+									<circle class="path path-1" cx="100" cy="100" r="80"></circle>
+								</svg>
+								<div class="percentage">90%</div>
+								<div class="text">Creativity</div>
+							</div>
+							<div class="radial-bar">
+								<svg x="0px" y="0px" viewBox="0 0 200 200">
+									<circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+									<circle class="path path-2" cx="100" cy="100" r="80"></circle>
+								</svg>
+								<div class="percentage">65%</div>
+								<div class="text">Communication</div>
+							</div>
+							<div class="radial-bar">
+								<svg x="0px" y="0px" viewBox="0 0 200 200">
+									<circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+									<circle class="path path-3" cx="100" cy="100" r="80"></circle>
+								</svg>
+								<div class="percentage">75%</div>
+								<div class="text">Problem Solving</div>
+							</div>
+							<div class="radial-bar">
+								<svg x="0px" y="0px" viewBox="0 0 200 200">
+									<circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+									<circle class="path path-4" cx="100" cy="100" r="80"></circle>
+								</svg>
+								<div class="percentage">85%</div>
+								<div class="text">Teamwork</div>
+							</div>
+						</div>
+					</div>
+			</section>
+			<!-- ************* PROJECTS ************* -->
+			<!-- <section id="projects" class="about">
+				<div class="about-content">
+					<h2>About <span class="multiple-text">Me</span></h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corporis fugiat explicabo obcaecati inventore temporibus velit atque.</p>
+				</div>
+			</section> -->
+			<!-- ************* CONTACT ME ************* -->
+			<!-- <section id="contactme" class="about">
+				<div class="about-content">
+					<h2>About <span class="multiple-text">Me</span></h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corporis fugiat explicabo obcaecati inventore temporibus velit atque.</p>
+				</div>
+			</section> -->
+		</main>
+		<footer>
+			<!-- ************* XXX ************* -->
+		</footer>
+	</body>
+	<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+	<script>
+		/* * * Multiple test Typed * * */
+
+		//Works on SVG files (https://css-tricks.com/svg-line-animation-works/)
+	</script>
+</html>
