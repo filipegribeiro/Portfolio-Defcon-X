@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 Project:	Portfolio Filipe Ribeiro
-Version:	0.1
-Last change:	07/04/2024
+Version:	0.2
+Last change:	19/08/2024
 Assigned to:	www.filipegribeiro.com 
 -------------------------------------------------------------------*/
 
@@ -31,7 +31,7 @@ Assigned to:	www.filipegribeiro.com
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'roboto', sans-serif;
-	/* border: 1px solid grey; */
+	/* 	border: 1px solid grey; */
 }
 
 a {
@@ -261,14 +261,18 @@ li {
 
 /* Home */
 .home {
+	display: flex;
+	align-items: left;
+	flex-direction: column;
+	padding: 0 10%;
 	height: 100vh;
+	padding: 10rem;
+	left: 0;
+	right: 0;
 	/* background: url('/imgs/home.jpg') no-repeat; */
 	background: linear-gradient(180deg, #000000 5%, #00000000 40%, #00000000 60%, #000000 92%);
 	background-size: 25rem;
 	background-position: right;
-	display: flex;
-	align-items: center;
-	padding: 0 10%;
 	/* * * Belongs to SAH * * */
 	/* position: absolute; */
 	/* width: 100wh; */
@@ -487,7 +491,7 @@ section span:hover {
 	width: 100%;
 }
 
-.home-sci {
+/* .home-sci {
 	position: absolute;
 	bottom: 75px;
 	widows: 170px;
@@ -582,6 +586,292 @@ section span:hover {
 
 .home-sci a:hover::before {
 	width: 100%;
+} */
+
+/** New Social btns **/
+
+.social-btns {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-top: 50px;
+	height: 75px;
+	width: 300px;
+}
+
+/** Github **/
+
+/* Container centralizado */
+.button-container1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px; /* Ajuste conforme necessário */
+	width: 50px;
+}
+
+/* Botão estilizado */
+.button1 {
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	background-image: linear-gradient(to right, #333, #000); /* Gradiente de fundo */
+	color: white;
+	font-weight: bold;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	text-decoration: none;
+	transition: all 0.5s ease;
+}
+
+.button1:hover {
+	transform: translateY(-12px); /* Move o botão para cima */
+	border-radius: 50%; /* Torna o botão redondo ao hover */
+	background-image: linear-gradient(to right, #c1fa4f, #aaff00); /* Altera o fundo ao hover */
+	color: #000000;
+}
+
+/* Ícone do botão */
+.icon {
+	width: 20px;
+	height: 20px;
+}
+
+/* Texto animado */
+.button-text1 {
+	position: absolute;
+	opacity: 0;
+	color: #aaff00;
+	font-size: 14px;
+	transition: all 0.7s ease;
+	transform: translateY(10px); /* Começa fora da vista */
+}
+
+.button1:hover .button-text1 {
+	opacity: 1;
+	transform: translateY(-30px); /* Move o texto para cima ao hover */
+}
+
+/** LinkedIn **/
+
+/* Container centralizado */
+.button-container2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px; /* Ajuste conforme necessário */
+	width: 50px;
+}
+
+/* Botão estilizado */
+.button2 {
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	background-color: #0077b5; /* Cor de fundo inicial */
+	color: white;
+	font-weight: bold;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	text-decoration: none;
+	transition: all 0.5s ease;
+}
+
+.button2:hover {
+	transform: translateY(-12px); /* Move o botão para cima */
+	border-radius: 50%; /* Torna o botão redondo ao hover */
+	background-image: linear-gradient(to right, #c1fa4f, #aaff00);
+	color: #000000;
+}
+
+/* Ícone do botão */
+.icon {
+	width: 20px;
+	height: 20px;
+}
+
+/* Texto animado */
+.button-text2 {
+	position: absolute;
+	opacity: 0;
+	color: #aaff00;
+	font-size: 14px;
+	transition: all 0.7s ease;
+	transform: translateY(10px); /* Começa fora da vista */
+}
+
+.button2:hover .button-text2 {
+	opacity: 1;
+	transform: translateY(-30px); /* Move o texto para cima ao hover */
+}
+
+/** Discord **/
+
+/* Container centralizado */
+.button-container3 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px; /* Ajuste conforme necessário */
+	width: 50px;
+}
+
+/* Botão estilizado */
+.button3 {
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	background-color: #7289da; /* Cor de fundo inicial (cor característica do Discord) */
+	color: white;
+	font-weight: bold;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	text-decoration: none;
+	transition: all 0.5s ease;
+}
+
+.button3:hover {
+	transform: translateY(-12px); /* Move o botão para cima */
+	border-radius: 50%; /* Torna o botão redondo ao hover */
+	background-image: linear-gradient(to right, #c1fa4f, #aaff00);
+	color: #000000;
+}
+
+/* Ícone do botão */
+.icon {
+	width: 20px;
+	height: 20px;
+}
+
+/* Texto animado */
+.button-text3 {
+	position: absolute;
+	opacity: 0;
+	color: #aaff00;
+	font-size: 14px;
+	transition: all 0.7s ease;
+	transform: translateY(10px); /* Começa fora da vista */
+}
+
+.button3:hover .button-text3 {
+	opacity: 1;
+	transform: translateY(-30px); /* Move o texto para cima ao hover */
+}
+
+/** Instagram **/
+
+/* Container centralizado */
+.button-container4 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px; /* Ajuste conforme necessário */
+	width: 50px;
+}
+
+/* Botão estilizado */
+.button4 {
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); /* Cor de fundo inicial */
+	color: white;
+	font-weight: bold;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	text-decoration: none;
+	transition: all 0.5s ease;
+}
+
+.button4:hover {
+	transform: translateY(-12px); /* Move o botão para cima */
+	border-radius: 50%; /* Torna o botão redondo ao hover */
+	background-image: linear-gradient(to right, #c1fa4f, #aaff00);
+	color: #000000;
+}
+
+/* Ícone do botão */
+.icon {
+	width: 20px;
+	height: 20px;
+}
+
+/* Texto animado */
+.button-text4 {
+	position: absolute;
+	opacity: 0;
+	color: #aaff00;
+	font-size: 14px;
+	transition: all 0.7s ease;
+	transform: translateY(10px); /* Começa fora da vista */
+}
+
+.button4:hover .button-text4 {
+	opacity: 1;
+	transform: translateY(-30px); /* Move o texto para cima ao hover */
+}
+/** Facebook **/
+
+/* Container centralizado */
+.button-container5 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px; /* Ajuste conforme necessário */
+	width: 50px;
+}
+
+/* Botão estilizado */
+.button5 {
+	position: relative;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+	background-color: #316ff6; /* Cor de fundo inicial (cor característica do Facebook) */
+	color: white;
+	font-weight: bold;
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	text-decoration: none;
+	transition: all 0.5s ease;
+}
+
+.button5:hover {
+	transform: translateY(-12px); /* Move o botão para cima */
+	border-radius: 50%; /* Torna o botão redondo ao hover */
+	background-image: linear-gradient(to right, #c1fa4f, #aaff00);
+	color: #000000;
+}
+
+/* Ícone do botão */
+.icon {
+	width: 20px;
+	height: 20px;
+}
+
+/* Texto animado */
+.button-text5 {
+	position: absolute;
+	opacity: 0;
+	color: #aaff00;
+	font-size: 14px;
+	transition: all 0.7s ease;
+	transform: translateY(10px); /* Começa fora da vista */
+}
+
+.button5:hover .button-text5 {
+	opacity: 1;
+	transform: translateY(-30px); /* Move o texto para cima ao hover */
 }
 
 .home .home-imgHover {
@@ -622,13 +912,18 @@ section span:hover {
 
 .about {
 	height: 100vh;
+	display: flex;
+	align-items: center;
+	/* align-items: left;
+	flex-direction: column; */
+	/* padding: 0 10%; */
+	padding: 10rem;
+	left: 0;
+	right: 0;
 	/* background: url('/imgs/home.jpg') no-repeat; */
 	background: linear-gradient(180deg, #000000 5%, #00000000 40%, #00000000 60%, #000000 92%);
 	background-size: 25rem;
 	background-position: right;
-	display: flex;
-	align-items: center;
-	padding: 0 10%;
 }
 
 .about-content {
@@ -711,6 +1006,151 @@ section span:hover {
 	animation: showRight 1s ease forwards;
 	animation-delay: 1.9s;
 	z-index: 2;
+}
+
+/* * Download button * */
+
+.btn-circle-download {
+	position: relative;
+	height: 48px;
+	width: 48px;
+	margin: auto;
+	border-radius: 100%;
+	background: #e8eaed;
+	cursor: pointer;
+	overflow: hidden;
+	transition: all 0.2s ease;
+}
+
+.btn-circle-download::after {
+	content: '';
+	position: relative;
+	display: block;
+	width: 200%;
+	height: 100%;
+	background-image: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
+	transform: translateX(-100%);
+}
+
+.btn-circle-download svg {
+	stroke-width: 2;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	fill: none;
+}
+
+.btn-circle-download svg#border {
+	position: absolute;
+	top: 0;
+	left: 0;
+	stroke: none;
+	stroke-dasharray: 144;
+	stroke-dashoffset: 144;
+	transition: all 0.9s linear;
+}
+
+.btn-circle-download svg#arrow {
+	position: absolute;
+	top: 14px;
+	left: 17px;
+	stroke: #9098a9;
+	transition: all 0.2s ease;
+}
+
+.btn-circle-download svg#check {
+	position: absolute;
+	top: 17px;
+	left: 13px;
+	stroke: white;
+	transform: scale(0);
+}
+
+.btn-circle-download:hover {
+	background: rgba(var(--color), 0.2);
+}
+
+.btn-circle-download:hover #arrow path,
+.btn-circle-download:hover #arrow polyline {
+	stroke: var(--color);
+}
+
+.btn-circle-download.load {
+	background: rgba(var(--color), 0.2);
+}
+
+.btn-circle-download.load #arrow path,
+.btn-circle-download.load #arrow polyline {
+	stroke: var(--color);
+}
+
+.btn-circle-download.load #border {
+	stroke: var(--color);
+	stroke-dasharray: 144;
+	stroke-dashoffset: 0;
+}
+
+.btn-circle-download.done {
+	background: var(--color);
+	animation: rubberBand 0.8s;
+}
+
+.btn-circle-download.done::after {
+	transform: translateX(50%);
+	transition: transform 0.4s ease;
+	transition-delay: 0.7s;
+}
+
+.btn-circle-download.done #border,
+.btn-circle-download.done #arrow {
+	display: none;
+}
+
+.btn-circle-download.done #check {
+	transform: scale(1);
+	transition: all 0.2s ease;
+	transition-delay: 0.2s;
+}
+
+@keyframes rubberBand {
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+	30% {
+		transform: scale3d(1.15, 0.75, 1);
+	}
+	40% {
+		transform: scale3d(0.75, 1.15, 1);
+	}
+	50% {
+		transform: scale3d(1.1, 0.85, 1);
+	}
+	65% {
+		transform: scale3d(0.95, 1.05, 1);
+	}
+	75% {
+		transform: scale3d(1.05, 0.95, 1);
+	}
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+.credit {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	transition: all 0.2s ease;
+	-webkit-user-select: none;
+	user-select: none;
+	opacity: 0.6;
+}
+
+.credit img {
+	width: 72px;
+}
+
+.credit:hover {
+	transform: scale(0.95);
 }
 
 /*--------------------------------------------------
