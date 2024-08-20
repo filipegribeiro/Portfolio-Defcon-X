@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 Project:	Portfolio Filipe Ribeiro
-Version:	0.2
-Last change:	19/08/2024
+Version:	0.3
+Last change:	20/08/2024
 Assigned to:	www.filipegribeiro.com 
 -------------------------------------------------------------------*/
 
@@ -11,9 +11,10 @@ Assigned to:	www.filipegribeiro.com
 02. Navigation
 03. Hero Section (Home)
 04. About Section
-05. My Skills Section
-06. Projects Section
-07. Contact Me
+05. Education Section
+06. My Skills Section
+07. Projects Section
+08. Contact Me
 
 -------------------------------------------------------------------*/
 
@@ -31,7 +32,7 @@ Assigned to:	www.filipegribeiro.com
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'roboto', sans-serif;
-	/* 	border: 1px solid grey; */
+	border: 1px solid grey;
 }
 
 a {
@@ -63,6 +64,31 @@ body {
 	/* background: #141414; */
 	background-color: #000000;
 	color: #f2f2f2;
+
+	/* --sb-track-color: #000000;
+	--sb-thumb-color: #aaff00;
+	--sb-size: 10px; */
+}
+
+body::-webkit-scrollbar {
+	width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+	background: #000000;
+	border-radius: 2px;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: #aaff00;
+	border-radius: 2px;
+	border: 1px solid #000000;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+	body {
+		scrollbar-color: #aaff00 #000000;
+	}
 }
 
 /** <!-- ************* LAYOUT ************* --> */
@@ -1228,7 +1254,144 @@ section span:hover {
 }
 
 /*--------------------------------------------------
-	05. My Skills Section
+	05. Education Settings
+---------------------------------------------------*/
+
+.sub-title-education {
+	font-size: 26px; /* Ajuste o tamanho da fonte conforme necessário */
+	font-weight: 700; /* Use o mesmo peso da fonte do título "My Skills" */
+	color: #f2f2f2; /* Altere para a cor do título "My Skills" */
+	position: relative;
+	line-height: 1.2;
+	margin-left: 120px;
+	/* margin: 5rem 0;
+	margin-bottom: 40px; */
+}
+
+.sub-title-education::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: #141414; /* Altere para a cor de fundo do título "My Skills" */
+	color: #f2f2f2;
+	animation: showRight 1s ease forwards;
+	animation-delay: 1.3s;
+}
+
+.multiple-text-education {
+	color: #aaff00; /* Altere para a cor do texto destacado do título "My Skills" */
+	font-size: 32px; /* Ajuste o tamanho da fonte conforme necessário */
+	font-weight: 800; /* Use o mesmo peso da fonte do título "My Skills" */
+}
+
+.multiple-text-education::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: #141414; /* Altere para a cor de fundo do título "My Skills" */
+	animation: showRight 1s ease forwards;
+	animation-delay: 1.3s;
+}
+
+.education {
+	padding: 100px 15px;
+	background: #000000;
+}
+
+.education h2 {
+	margin-bottom: 5rem;
+}
+
+.timeline-items {
+	max-width: 1200px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.timeline-items::before {
+	content: '';
+	position: absolute;
+	width: 5px;
+	height: 100%;
+	background-color: #aaff00;
+	left: calc(50% - 1px);
+}
+
+.timeline-item {
+	margin-bottom: 40px;
+	width: 100%;
+	position: relative;
+}
+
+.timeline-item:last-child {
+	margin-bottom: 0;
+}
+
+.timeline-item:nth-child(odd) {
+	padding-right: calc(50% + 30px);
+	text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+	padding-left: calc(50% + 30px);
+}
+
+.timeline-dot {
+	height: 21px;
+	width: 21px;
+	background-color: #aaff00;
+	box-shadow: 0 0 25px #aaff00, 0 0 50px #aaff00;
+	position: absolute;
+	left: calc(50% - 8px);
+	border-radius: 50%;
+	top: 10px;
+}
+
+.timeline-date {
+	font-size: 20px;
+	font-weight: 800;
+	color: #f2f2f2;
+	margin: 6px 0 15px;
+}
+
+.timeline-content {
+	background-color: #000000;
+	border: 3px solid #aaff00;
+	padding: 30px 50px;
+	border-radius: 4rem;
+	box-shadow: 0 0 10px #aaff00;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+
+.timeline-content:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0 25px #aaff00;
+}
+
+.timeline-content h3 {
+	font-size: 20px;
+	color: #f2f2f2;
+	margin: 0 0 10px;
+	font-weight: 500;
+}
+
+.timeline-content p {
+	color: #f2f2f2;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 22px;
+}
+/*--------------------------------------------------
+	06. My Skills Section
 ---------------------------------------------------*/
 
 .myskills {
