@@ -1,7 +1,7 @@
 //**** MENU MOBILE ****
 
 document.addEventListener('DOMContentLoaded', function () {
-	const btnMobile = document.getElementById('btn-Mobile');
+	const btnMobile = document.getElementById('btn-mobile');
 
 	function toggleMenu(event) {
 		if (event.type === 'touchstart') event.preventDefault();
