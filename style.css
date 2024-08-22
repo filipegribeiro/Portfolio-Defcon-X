@@ -32,7 +32,7 @@ Assigned to:	www.filipegribeiro.com
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'roboto', sans-serif;
-	border: 1px solid grey;
+	/* border: 1px solid grey; */
 }
 
 a {
@@ -109,7 +109,7 @@ body::-webkit-scrollbar-thumb {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	z-index: 100;
+	z-index: 1000; /* Mantém o header acima do menu */
 }
 
 .header::before {
@@ -119,7 +119,7 @@ body::-webkit-scrollbar-thumb {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	/* background: #141414; */
+	background: #141414;
 	animation: showRight 1s ease forwards;
 	animation-delay: 1s;
 }
@@ -139,7 +139,7 @@ body::-webkit-scrollbar-thumb {
 	right: 0;
 	width: 100%;
 	height: 100%;
-	/* background: #141414; */
+	background: #141414;
 	animation: showRight 1s ease forwards;
 	animation-delay: 1s;
 }
@@ -157,7 +157,7 @@ body::-webkit-scrollbar-thumb {
 
 li {
 	display: inline-block;
-	padding: 0 10px;
+	padding: 0px 10px;
 	position: relative;
 }
 
@@ -197,50 +197,65 @@ li {
 
 /* Button */
 
-#btn-mobile {
-	display: none;
-}
-
 @media (max-width: 990px) {
 	#btn-mobile {
-		display: block;
-	}
-
-	#menu {
-		display: block;
-		position: absolute;
-		width: 100%;
-		top: 70px;
-		right: 0px;
-		background: #e7e7e7;
-		display: block;
-		transition: 0.6s;
-		z-index: 1000;
-		height: 0px;
-		visibility: hidden;
-		overflow-y: auto;
-	}
-
-	#nav.active #menu {
-		height: calc(100vh - 70px);
-		visibility: visible;
-		overflow-y: auto;
-	}
-
-	#menu a {
-		padding: 1rem 0;
-		margin: 0 1rem;
-		border-bottom: 2px solid #f2f2f2;
-	}
-
-	#btn-mobile {
 		display: flex;
+		position: absolute;
+		right: 38px;
+		top: 20px;
 		padding: 0.5rem 1rem;
 		font-size: 1rem;
 		border: none;
 		background: none;
+		z-index: 1100; /* Garante que o botão de menu esteja acima de tudo */
 		cursor: pointer;
 		gap: 0.5rem;
+	}
+
+	#menu {
+		position: fixed;
+		width: 0;
+		right: 0;
+		top: 0;
+		height: 100vh; /* Altura total da tela */
+		background-color: #000000; /* Fundo preto */
+		color: #aaff00; /* Cor verde para o texto */
+		display: flex;
+		flex-direction: column; /* Organiza as âncoras na vertical */
+		justify-content: center; /* Centraliza verticalmente */
+		align-items: flex-end; /* Alinha as âncoras à direita */
+		overflow-y: auto;
+		visibility: visible;
+		border: 1px solid #c1fa4f;
+		border-radius: 5px;
+		transition: width 0.6s ease; /* Animação para abrir e fechar */
+		gap: 2.5rem;
+	}
+
+	/* Menu ativo: abrir de direita para esquerda */
+	#nav.active #menu {
+		width: 30vw; /* Largura final do menu */
+	}
+
+	.navbar a:hover:after {
+		color: #aaff00;
+		width: 65%;
+	}
+
+	#menu a {
+		color: #aaff00; /* Cor verde para o texto */
+		text-decoration: none;
+		font-size: 18px;
+		padding: 15px 20px; /* Espaçamento interno para alinhamento */
+		margin-right: 2.5rem; /* Margem à direita para criar espaço */
+		margin-left: -12px;
+		text-align: right; /* Alinhamento do texto à direita */
+		transition: color 0.3s ease;
+	}
+
+	#menu a:hover {
+		color: #ffffff; /* Cor branca ao passar o mouse */
+		transform: scale(1.05);
 	}
 
 	#hamburger {
@@ -270,86 +285,14 @@ li {
 	#nav.active #hamburger {
 		border-top-color: transparent;
 	}
+
 	#nav.active #hamburger::before {
 		transform: rotate(135deg);
 	}
+
 	#nav.active #hamburger::after {
 		transform: rotate(-135deg);
 		top: -7px;
-	}
-}
-
-@media (max-width: 990px) {
-	/* Estilo para o menu quando estiver ativo */
-	#nav.active #menu {
-		background-color: #000000; /* Fundo preto */
-		color: #aaff00; /* Cor verde para o texto */
-		height: 100vh; /* Altura total da tela */
-		width: 0; /* Largura inicial do menu (escondido) */
-		position: fixed;
-		top: 0; /* Alinhado ao topo da página */
-		right: 0; /* Alinhado ao lado direito da tela */
-		z-index: 999; /* Mantém o menu atrás do header */
-		display: flex;
-		flex-direction: column; /* Organiza as âncoras na vertical */
-		justify-content: center; /* Centraliza verticalmente */
-		align-items: flex-end; /* Alinha as âncoras à direita */
-		overflow-y: auto;
-		transition: width 0.6s ease; /* Animação da abertura da cortina */
-		gap: 2.5rem;
-	}
-
-	/* Menu ativo: abrir de direita para esquerda */
-	#nav.active #menu {
-		width: 50vw; /* Largura final do menu */
-	}
-
-	#menu a {
-		color: #aaff00; /* Cor verde para o texto */
-		text-decoration: none;
-		font-size: 18px;
-		padding: 15px 20px; /* Espaçamento interno para alinhamento */
-		margin-right: 2.5rem; /* Margem à direita para criar espaço */
-		text-align: right; /* Alinhamento do texto à direita */
-		animation: pulsate 1.5s infinite; /* Animação de pulsação */
-		transition: color 0.3s ease;
-	}
-
-	#menu a:hover {
-		color: #ffffff; /* Cor branca ao passar o mouse */
-	}
-
-	@keyframes pulsate {
-		0% {
-			transform: scale(1);
-		}
-		50% {
-			transform: scale(1.2); /* Aumenta o texto */
-		}
-		100% {
-			transform: scale(1);
-		}
-	}
-
-	/* Aplicar animação de pulsação em ordem para cada link */
-	#menu a:nth-child(1) {
-		animation-delay: 0s;
-	}
-
-	#menu a:nth-child(2) {
-		animation-delay: 0.2s;
-	}
-
-	#menu a:nth-child(3) {
-		animation-delay: 0.4s;
-	}
-
-	#menu a:nth-child(4) {
-		animation-delay: 0.6s;
-	}
-
-	#menu a:nth-child(5) {
-		animation-delay: 0.8s;
 	}
 }
 
@@ -1114,9 +1057,9 @@ section span:hover {
 	position: relative;
 	height: 48px;
 	width: 48px;
-	margin: auto;
+	margin: 20px;
 	border-radius: 100%;
-	background: #e8eaed;
+	background: #f2f2f2;
 	cursor: pointer;
 	overflow: hidden;
 	transition: all 0.2s ease;
@@ -1128,7 +1071,7 @@ section span:hover {
 	display: block;
 	width: 200%;
 	height: 100%;
-	background-image: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
+	background-image: linear-gradient(100deg, #aaff00, #c1fa4f, #aaff00);
 	transform: translateX(-100%);
 }
 
@@ -1153,7 +1096,7 @@ section span:hover {
 	position: absolute;
 	top: 14px;
 	left: 17px;
-	stroke: #9098a9;
+	stroke: #000000;
 	transition: all 0.2s ease;
 }
 
@@ -1161,7 +1104,7 @@ section span:hover {
 	position: absolute;
 	top: 17px;
 	left: 13px;
-	stroke: white;
+	stroke: #f2f2f2;
 	transform: scale(0);
 }
 
