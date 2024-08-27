@@ -5,6 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 		<script src="/script.js"></script>
 		<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
 		<title>Filipe Ribeiro</title>
@@ -37,13 +39,137 @@
 			<section class="home">
 				<div class="home-content">
 					<h1>Hi, I'm <span class="color">F</span>ilipe <span class="color"> R</span>ibeiro</h1>
-					<h3>And I'm a <span class="multiple-text" id="text-changed"> Junior Fullstack Web Developer</span></h3>
+					<h3>And I'm a <span class="multiple-text" id="text-changed"></span></h3>
 					<p>Junior developer and a strong desire to learn more <span>_</span></p>
 					<div class="btn-box">
 						<a href="#projects">Hire me!</a>
 						<a href="#contactme">Let's talk?</a>
 					</div>
 				</div>
+				<div class="spline">
+					<!-- <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.20/build/spline-viewer.js"></script>
+					<spline-viewer url="https://prod.spline.design/bOyf1sxXhcR9aFku/scene.splinecode"></spline-viewer> -->
+
+					<script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.20/build/spline-viewer.js"></script>
+					<spline-viewer url="https://prod.spline.design/KWqVt2OEbJtF5sZW/scene.splinecode"></spline-viewer>
+				</div>
+
+
+				<!-- <span class="home-imgHover">
+					<img src="/imgs/Home sem background.png" alt=" It's a photo of Filipe Ribeiro in a professional pose, confident, relaxed, with a friendly and humble smile." />
+				</span> -->
+			</section>
+
+			<!-- ************* ABOUT ************* -->
+			
+			<section id="about" class="about">
+				<div class="about-content">
+					<h2 class="sub-title-about">About <span class="multiple-text-about">Me</span></h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corporis fugiat explicabo obcaecati inventore temporibus velit atque.</p>
+					<div class="btn-box">
+						<a href="#cv.pdf" download >Download CV</a>
+					</div>
+				</div>
+
+				<!--** HOBBIES **-->
+
+				<div class="topics" id="topics" aria-labelledby="topic-label">
+					<div class="container_hobbies">
+						<div class="card topic-card">
+							<div class="card-content">
+								<h2 class="headline headline-2 section-title card-title" id="topic-label">
+									Hobbies
+								</h2>
+								<p class="card-text">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, quis...
+								</p>
+								<div class="btn-group">
+									<button class="btn-icon" aria-label="previous" data-slider-prev>
+									<ion-icon name="arrow-back" aria-hidden="true"></ion-icon>
+									</button>
+									<button class="btn-icon" aria-label="next" data-slider-next>
+									<ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+									</button>
+								</div>
+							</div>
+							<div class="slider" data-slider>
+								<ul class="slider-list" data-slider-container>
+									<li class="slider-item">
+									<a href="#" class="slider-card">
+										<figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+										<img src="./imgs/Home sem background.png" width="507" height="618" loading="lazy" alt="Sport"
+											class="img-cover">
+										</figure>
+
+										<div class="slider-content">
+										<span class="slider-title">Sport</span>
+										<p class="slider-subtitle">38 Articles</p>
+										</div>
+									</a>
+									</li>
+
+									<li class="slider-item">
+									<a href="#" class="slider-card">
+										<figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+										<img src="./imgs/Home sem background.png" width="507" height="618" loading="lazy" alt="Travel"
+											class="img-cover">
+										</figure>
+
+										<div class="slider-content">
+										<span class="slider-title">Travel</span>
+										<p class="slider-subtitle">63 Articles</p>
+										</div>
+									</a>
+									</li>
+
+									<li class="slider-item">
+									<a href="#" class="slider-card">
+										<figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+										<img src="./imgs/Home sem background.png" width="507" height="618" loading="lazy" alt="Design"
+											class="img-cover">
+										</figure>
+
+										<div class="slider-content">
+										<span class="slider-title">Design</span>
+										<p class="slider-subtitle">78 Articles</p>
+										</div>
+									</a>
+									</li>
+									<li class="slider-item">
+									<a href="#" class="slider-card">
+										<figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+										<img src="./imgs/Home sem background.png" width="507" height="618" loading="lazy" alt="Movie"
+											class="img-cover">
+										</figure>
+
+										<div class="slider-content">
+										<span class="slider-title">Movie</span>
+										<p class="slider-subtitle">125 Articles</p>
+										</div>
+
+									</a>
+									</li>
+
+									<li class="slider-item">
+									<a href="#" class="slider-card">
+										<figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+										<img src="./imgs/Home sem background.png" width="507" height="618" loading="lazy" alt="Lifestyle"
+											class="img-cover">
+										</figure>
+
+										<div class="slider-content">
+										<span class="slider-title">Lifestyle</span>
+										<p class="slider-subtitle">78 Articles</p>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- ** SOCIAL BUTTONS ** -->
+
 				<div class="social-btns">
 					<!-- Github -->
 					 <div class="button-container1">
@@ -144,25 +270,7 @@
 							<span class="button-text5">Facebook</span>
 						</a>
 					</div> -->
-
-
-				<!-- <span class="home-imgHover">
-					<img src="/imgs/Home sem background.png" alt=" It's a photo of Filipe Ribeiro in a professional pose, confident, relaxed, with a friendly and humble smile." />
-				</span> -->
 			</section>
-
-			<!-- ************* ABOUT ************* -->
-			
-			<section id="about" class="about">
-				<div class="about-content">
-					<h2 class="sub-title-about">About <span class="multiple-text-about">Me</span></h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corporis fugiat explicabo obcaecati inventore temporibus velit atque.</p>
-					<div class="btn-box">
-						<a href="#cv.pdf" download >Download CV</a>
-					</div>
-				</div>
-			</section>
-
 			<!-- ************* EDUCATION ************* -->
 			
 			<section class="education" id="education">
@@ -220,7 +328,7 @@
 				<h1 class="sub-title-skills">My <span class="multiple-text-skills">Skills</span></h1>
 				<div class="main-container">
 					<div class="action-container">
-						<h1 class="heading1">Main technical skills</h1>
+						<h1 class="heading1">Coding skills</h1>
 						<div class="technical-bars">
 							<div class="bar">
 								<i class="bx bxl-html5" style="color: #c95d2e"></i>
@@ -270,7 +378,7 @@
 						</div>
 					</div>
 					<div class="action-container">
-						<h1 class="heading1">Professional Skills</h1>
+						<h1 class="heading1">Soft Skills</h1>
 						<div class="radial-bars">
 							<div class="radial-bar">
 								<svg x="0px" y="0px" viewBox="0 0 200 200">
@@ -312,26 +420,45 @@
 			
 			<section id="projects" class="about">
 				<div class="about-content">
-					<h2>About <span class="multiple-text">Me</span></h2>
+					<h2>Ongoing <span class="multiple-text">Projects</span></h2>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corporis fugiat explicabo obcaecati inventore temporibus velit atque.</p>
 				</div>
 			</section>
 			
 			<!-- ************* CONTACT ************* -->
 			
-			<section id="contactme" class="about">
-				<div class="about-content">
-					<h2>About <span class="multiple-text">Me</span></h2>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad corporis fugiat explicabo obcaecati inventore temporibus velit atque.</p>
-				</div>
+			<section id="contactme" class="contact">
+  				<h2 class="sub-title-contact">Contact <span class="highlight">Me</span></h2>
+  				<p class="contact-description">I'd love to hear from you. Please fill out the form below to get in touch.</p>
+  				
+				<form id="contact-form">
+  				  <div class="form-group">
+  				    <label for="name">Name:</label>
+  				    <input type="text" id="name" name="name" required>
+  				  </div>
+  				  <div class="form-group">
+  				    <label for="email">Email:</label>
+  				    <input type="email" id="email" name="email" required>
+  				  </div>
+  				  <div class="form-group">
+  				    <label for="message">Message:</label>
+  				    <textarea id="message" name="message" required></textarea>
+  				  </div>
+  				  <button type="submit" class="submit-btn">Send Message</button>
+  				</form>
 			</section>
-			
 		</main>
-
-		<footer>
 			<!-- ************* XXX ************* -->
+		<footer class="footer">
+  			<div class="footer-content">
+  				  <p>© 2024 Filipe Ribeiro. All rights reserved.</p>
+  				  <div class="social-icons">
+  				    <a href="https://github.com/filipegribeiro" target="_blank" aria-label="Github"><i class="bx bxl-github"></i></a>
+  				    <a href="https://www.linkedin.com/in/filipegribeiro/" target="_blank" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+  				    <a href="https://discord.com/channels/@me1072288503787958322" target="_blank" aria-label="Discord"><i class="bx bxl-discord"></i></a>
+  				  </div>
+  			</div>
 		</footer>
-
 	</body>
 	<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
