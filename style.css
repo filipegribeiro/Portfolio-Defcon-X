@@ -52,7 +52,7 @@ Assigned to:	www.filipegribeiro.com
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Fira Code', monospace;
-	/* border: 1px solid grey; */
+	border: 1px solid grey;
 }
 
 a {
@@ -786,8 +786,9 @@ li {
 .about {
 	height: 100vh;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: left;
+	justify-content: auto;
 	/* padding: 0 10%; */
 	padding-left: 7.5rem;
 	padding-top: 2rem;
@@ -883,17 +884,160 @@ li {
 	z-index: 2;
 }
 
-/*-----------------------------------*\
-  #TOPICS
-\*-----------------------------------*/
+/** Styling for hobbies **/
+
+.container {
+	padding-inline: 16px;
+}
+
+.hover-1,
+.hover-2 {
+	transition: 0.25s ease;
+}
+
+.hover-1:is(:hover, :focus-visible) {
+	color: hsla(88, 33%, 68%, 1); /* Alterado para tonalidade verde */
+	transform: translateX(3px);
+}
+
+.hover-2:is(:hover, :focus-visible) {
+	color: hsla(88, 89%, 49%, 1); /* Alterado para tonalidade verde */
+}
+
+.profile-card {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.profile-card .profile-banner {
+	border-radius: 50%;
+}
+
+.headline {
+	color: hsla(88, 69%, 84%, 1); /* Alterado para tonalidade verde */
+	line-height: 1.3;
+}
+
+.headline-1 {
+	font-size: 2.9rem;
+	color: hsla(88, 100%, 70%, 1); /* Alterado para tonalidade verde */
+	font-weight: 800;
+}
+
+.headline-2 {
+	font-size: 2rem;
+}
+
+.headline-3 {
+	font-size: 2rem;
+	line-height: 1.5;
+}
+
+.section-title {
+	margin-block-end: 10px;
+}
+
+.headline .span {
+	background-image: linear-gradient(90deg, #aaff00, #8bcc00 51%); /* Alterado para tonalidade verde */
+	display: inline-block;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+
+.btn {
+	background-image: linear-gradient(90deg, #aaff00, #8bcc00 51%, #aaff00);
+	background-size: 200%;
+	background-position: left;
+	color: hsl(0, 0%, 100%, 1);
+	font-size: 1.4rem;
+	font-weight: 700;
+	max-width: max-content;
+	display: flex;
+	align-items: center;
+	gap: 3px;
+	transition: 0.25s ease;
+}
+
+.btn:is(:hover, :focus-visible) {
+	background-position: right;
+}
+
+.btn-primary {
+	padding: 8px 16px;
+	border-radius: 6px;
+}
+
+.btn-secondary {
+	padding: 18px 30px;
+	border-radius: 200px;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.card {
+	background-color: #aaff00b3; /* Alterado para tonalidade verde */
+	border: 1px solid #aaff00; /* Alterado para tonalidade verde */
+}
+
+.img-holder {
+	aspect-ratio: var(--width) / var(--height);
+	background-color: rgb(14, 17, 10); /* Alterado para tonalidade verde */
+	overflow: hidden;
+}
+
+.img-cover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.section {
+	padding-block: 70px;
+}
+
+.section-text {
+	font-size: 1.8rem;
+	margin-block-end: 70px;
+}
+
+.grid-list {
+	display: grid;
+	gap: 30px;
+}
+
+.card-wrapper {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	align-items: center;
+	font-size: 1.4rem;
+	margin-block: 20px;
+}
+
+.card-wrapper :is(.card-tag, .wrapper) {
+	display: flex;
+	gap: 3px;
+	align-items: center;
+}
+
+/** Hobbies **/
+
+.topics {
+	width: 700px;
+	height: 400px;
+	margin-left: 5rem;
+}
 
 .container_hobbies {
 	padding-inline: 16px;
 }
 
 .card {
-	background-color: var(hsla(222, 44%, 13%, 1));
-	border: 1px solid hsla(216, 33%, 20%, 1);
+	background-color: var(#aaff00b3); /* Alterado para tonalidade verde */
+	border: 1px solid #aaff00; /* Alterado para tonalidade verde */
 }
 
 .topics {
@@ -910,8 +1054,9 @@ li {
 }
 
 .topic-card .card-text {
-	color: hsla(216, 33%, 68%, 1);
+	color: #000000; /* Alterado para tonalidade verde */
 	font-size: 1.4rem;
+	font-weight: 600;
 	margin-block: 15px 20px;
 }
 
@@ -926,13 +1071,13 @@ li {
 	height: 32px;
 	display: grid;
 	place-items: center;
-	background: hsla(216, 33%, 20%, 1);
+	background: #000000; /* Alterado para tonalidade verde */
 	border-radius: 50%;
-	color: var(--white);
+	color: #ffffff;
 }
 
 .btn-icon:is(:hover, :focus-visible) {
-	background: linear-gradient(90deg, #0ea5ea, #0bd1d1 51%);
+	background: linear-gradient(90deg, #aaff00, #8bcc00 51%); /* Alterado para tonalidade verde */
 }
 
 .slider {
@@ -963,7 +1108,7 @@ li {
 	left: 0;
 	width: 100%;
 	height: 50%;
-	background-image: linear-gradient(0deg, #000d1a, transparent);
+	background-image: linear-gradient(0deg, #001200, transparent); /* Alterado para tonalidade verde escuro */
 	border-radius: 8px;
 }
 
@@ -975,17 +1120,18 @@ li {
 	position: absolute;
 	bottom: 15px;
 	left: 15px;
+	width: 150px;
 }
 
 .slider-title {
-	color: hsla(199, 69%, 84%, 1);
+	color: #d8f2ba; /* Alterado para tonalidade verde */
 	font-weight: 700;
 	margin-block-end: 5px;
 	transition: 0.25s ease;
 }
 
 .slider-card:is(:hover, :focus-visible) .slider-title {
-	color: hsla(199, 89%, 49%, 1);
+	color: hsl(88, 89%, 49%); /* Alterado para tonalidade verde */
 }
 
 .slider-subtitle {
@@ -1166,116 +1312,6 @@ li {
 }
 
 .button3:hover .button-text3 {
-	opacity: 1;
-	transform: translateY(-30px); /* Move o texto para cima ao hover */
-}
-
-/** Instagram **/
-
-/* Container centralizado */
-.button-container4 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 50px; /* Ajuste conforme necessário */
-	width: 50px;
-}
-
-/* Botão estilizado */
-.button4 {
-	position: relative;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	padding: 10px;
-	background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); /* Cor de fundo inicial */
-	color: white;
-	font-weight: bold;
-	border-radius: 8px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	text-decoration: none;
-	transition: all 0.5s ease;
-}
-
-.button4:hover {
-	transform: translateY(-12px); /* Move o botão para cima */
-	border-radius: 50%; /* Torna o botão redondo ao hover */
-	background-image: linear-gradient(to right, #c1fa4f, #aaff00);
-	color: #000000;
-}
-
-/* Ícone do botão */
-.icon {
-	width: 20px;
-	height: 20px;
-}
-
-/* Texto animado */
-.button-text4 {
-	position: absolute;
-	opacity: 0;
-	color: #aaff00;
-	font-size: 14px;
-	transition: all 0.7s ease;
-	transform: translateY(10px); /* Começa fora da vista */
-}
-
-.button4:hover .button-text4 {
-	opacity: 1;
-	transform: translateY(-30px); /* Move o texto para cima ao hover */
-}
-
-/** Facebook **/
-
-/* Container centralizado */
-.button-container5 {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 50px; /* Ajuste conforme necessário */
-	width: 50px;
-}
-
-/* Botão estilizado */
-.button5 {
-	position: relative;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	padding: 10px;
-	background-color: #316ff6; /* Cor de fundo inicial (cor característica do Facebook) */
-	color: white;
-	font-weight: bold;
-	border-radius: 8px;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	text-decoration: none;
-	transition: all 0.5s ease;
-}
-
-.button5:hover {
-	transform: translateY(-12px); /* Move o botão para cima */
-	border-radius: 50%; /* Torna o botão redondo ao hover */
-	background-image: linear-gradient(to right, #c1fa4f, #aaff00);
-	color: #000000;
-}
-
-/* Ícone do botão */
-.icon {
-	width: 20px;
-	height: 20px;
-}
-
-/* Texto animado */
-.button-text5 {
-	position: absolute;
-	opacity: 0;
-	color: #aaff00;
-	font-size: 14px;
-	transition: all 0.7s ease;
-	transform: translateY(10px); /* Começa fora da vista */
-}
-
-.button5:hover .button-text5 {
 	opacity: 1;
 	transform: translateY(-30px); /* Move o texto para cima ao hover */
 }
