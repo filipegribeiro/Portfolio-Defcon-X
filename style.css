@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------
 Project:	Portfolio Filipe Ribeiro
-Version:	0.5
-Last change:	27/08/2024
+Version:	0.6
+Last change:	05/09/2024
 Assigned to:	www.filipegribeiro.com 
 -------------------------------------------------------------------*/
 
@@ -52,7 +52,7 @@ Assigned to:	www.filipegribeiro.com
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Fira Code', monospace;
-	border: 1px solid grey;
+	border: 1px solid rgb(168, 137, 137);
 }
 
 a {
@@ -155,6 +155,20 @@ body::-webkit-scrollbar-thumb {
 @supports not selector(::-webkit-scrollbar) {
 	body {
 		scrollbar-color: #aaff00 #000000;
+	}
+}
+
+/* reusable css classes */
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
+}
+
+@media (max-width: 480px) {
+	.container {
+		padding: 0 1rem;
 	}
 }
 
@@ -424,8 +438,9 @@ li {
 }
 
 .home-content {
-	padding-right: 1rem;
-	padding-top: 3rem;
+	/* padding-right: 1rem;
+	padding-top: 3rem; */
+	margin-top: 4.5rem;
 	width: 900px;
 	/* atualização para responsividade */
 	/* width: 100%; */
@@ -600,9 +615,10 @@ li {
 
 .spline {
 	position: block;
-	margin: 1rem 1rem;
+	/* margin: 1rem 1rem; */
 	padding: 1rem 2rem;
 	margin-left: 8rem;
+	margin-top: 3.5rem;
 	/* right: 135px; */
 	width: 900px;
 	height: 100%;
@@ -787,8 +803,8 @@ li {
 	height: 100vh;
 	display: flex;
 	flex-direction: row;
-	align-items: left;
-	justify-content: auto;
+	/* align-items: left;
+	justify-content: auto; */
 	/* padding: 0 10%; */
 	padding-left: 7.5rem;
 	padding-top: 2rem;
@@ -798,6 +814,13 @@ li {
 	background: linear-gradient(180deg, #000000 5%, #00000000 40%, #00000000 60%, #000000 92%);
 	background-size: 25rem;
 	background-position: right;
+}
+
+@media (max-width: 1090) {
+	.about {
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 .about-content {
@@ -867,6 +890,7 @@ li {
 	justify-content: space-between;
 	width: 345px;
 	height: 60px;
+	margin-top: 4.5rem;
 	font-size: 600 bold;
 	color: #000000;
 }
@@ -1032,21 +1056,31 @@ li {
 }
 
 .container_hobbies {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	padding-inline: 16px;
+	/* max-width: 700px;
+	max-height: 400px; */
 }
 
 .card {
 	background-color: var(#aaff00b3); /* Alterado para tonalidade verde */
 	border: 1px solid #aaff00; /* Alterado para tonalidade verde */
+	/* max-width: 700px;
+	max-height: 400px; */
 }
 
 .topics {
 	padding-block: 70px;
+	max-height: 100vh;
 }
 
 .topic-card {
 	padding: 24px;
 	border-radius: 8px;
+	/* max-width: 700px;
+	max-height: 400px; */
 }
 
 .topic-card .card-content {
@@ -1083,6 +1117,8 @@ li {
 .slider {
 	--slider-items: 1;
 	overflow: hidden;
+	/* max-width: 700px;
+	max-height: 400px; */
 }
 
 .slider-list {
@@ -1091,6 +1127,8 @@ li {
 	align-items: center;
 	gap: 20px;
 	transition: 0.5s ease;
+	/* max-width: 700px;
+	max-height: 400px; */
 }
 
 .slider-item {
@@ -1326,7 +1364,7 @@ li {
 	color: #f2f2f2; /* Altere para a cor do título "My Skills" */
 	position: relative;
 	line-height: 1.2;
-	margin-left: 120px;
+	margin-left: 6.5rem;
 	/* margin: 5rem 0;
 	margin-bottom: 40px; */
 }
@@ -1453,6 +1491,7 @@ li {
 	font-weight: 300;
 	line-height: 22px;
 }
+
 /*--------------------------------------------------
 	06. My Skills Section
 ---------------------------------------------------*/
@@ -1522,12 +1561,29 @@ li {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-top: 4rem;
 }
 
 .action-container {
 	width: 450px;
 	padding: 75px 90px;
 	margin-left: 90px;
+}
+
+@media (max-width: 1090px) {
+	.main-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.action-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
 }
 
 .heading1 {
@@ -1796,6 +1852,56 @@ li {
 }
 
 /*--------------------------------------------------
+	07. Projects Section
+---------------------------------------------------*/
+.project-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 2rem;
+}
+
+.project-card {
+	padding: 3rem 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	gap: 1.5rem;
+	border: 2px solid #aaff00;
+	border-radius: 3rem;
+	cursor: pointer;
+	transition: 0.3s ease-in-out;
+}
+
+.project-card:hover {
+	background-color: #f2f2f2;
+	color: #8bcc00;
+	transform: translateY(-10px) scale(1.02);
+}
+
+.project-card img {
+	width: 20vw;
+	border-radius: 1rem;
+}
+
+.project-card:hover .btn {
+	border: 2px solid #aaff00;
+	color: #000000;
+}
+
+.project-card:hover .btn:hover {
+	border: 2px solid white;
+	background-color: white;
+	color: #000000;
+}
+
+.project-card h3 {
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+/*--------------------------------------------------
 	08. Contact Me
 ---------------------------------------------------*/
 
@@ -1806,13 +1912,23 @@ li {
 }
 
 .sub-title-contact {
+	margin-left: 6.5rem;
 	font-size: 26px;
 	font-weight: 700;
 	color: #f2f2f2;
 	position: relative;
 	line-height: 1.2;
 	margin-bottom: 40px;
-	text-align: center;
+	/* text-align: center; */
+}
+
+.contact-form {
+	margin-left: 6.5rem;
+	margin-right: 6.5rem;
+}
+
+.highlight {
+	color: #aaff00;
 }
 
 .contact-description {
@@ -1833,7 +1949,10 @@ li {
 
 .form-group input,
 .form-group textarea {
-	width: 100%;
+	display: block;
+	align-items: center;
+	align-content: center;
+	width: 75%;
 	padding: 10px;
 	font-size: 16px;
 	border: 1px solid #aaff00;
@@ -1849,6 +1968,7 @@ li {
 	color: #000000;
 	border: none;
 	border-radius: 5px;
+	font-weight: 600;
 	cursor: pointer;
 	transition: background 0.3s;
 }
