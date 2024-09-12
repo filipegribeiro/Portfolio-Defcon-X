@@ -52,7 +52,7 @@ Assigned to:	www.filipegribeiro.com
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Fira Code', monospace;
-	border: 1px solid rgb(168, 137, 137);
+	/* border: 1px solid rgb(168, 137, 137); */
 }
 
 a {

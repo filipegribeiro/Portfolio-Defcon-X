@@ -108,7 +108,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
 	const message = document.getElementById('message').value;
 
 	try {
-		const response = await fetch('/email/send-email', {
+		const response = await fetch('http://localhost:3000/email/send-email', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
