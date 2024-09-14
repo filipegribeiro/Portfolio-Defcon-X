@@ -3,8 +3,17 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
 require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
+
+// Configuração básica do CORS
+app.use(
+	cors({
+		origin: 'http://localhost:5501', // Permitir apenas o frontend a partir deste URL (altera para o URL do teu frontend)
+		methods: ['GET', 'POST'], // Métodos permitidos
+	}),
+);
 
 // Rate Limiting - previne ataques de força bruta ou de negação de serviço (DoS)
 const limiter = rateLimit({

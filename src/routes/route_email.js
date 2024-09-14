@@ -1,6 +1,8 @@
 const express = require('express');
 /* const nodemailer = require('nodemailer'); */
-const mailgun = require('mailgun-js');
+const formData = require('form-data');
+const Mailgun = require('mailgun.js');
+const mailgun = new Mailgun(formData);
 require('dotenv').config();
 const { body, validationResult } = require('express-validator');
 
@@ -8,10 +10,15 @@ const router = express.Router();
 
 // Configuração do Mailgun
 
-const mg = mailgun({
+const mg = mailgun.client({
+	username: 'api',
+	key: process.env.MAILGUN_API_KEY || 'key-yourkeyhere',
+});
+
+/* const mg = mailgun({
 	apiKey: process.env.MAILGUN_API_KEY,
 	domain: process.env.MAILGUN_DOMAIN,
-});
+}); */
 
 // Configuração do Nodemailer
 /* const transporter = nodemailer.createTransport({
@@ -51,10 +58,11 @@ router.post(
 		}
 
 		const { name, email, message } = req.body;
+		console.log('Received message request: ', req.body);
 
-		//TODO Validação já feita pelo express-validator!
+		//TODO Validação é feita pelo express-validator, pelo que o que está abaixo é redundante! Serve como lembrança:
 
-		// Verificar se os campos estão preenchidos
+		/* // Verificar se os campos estão preenchidos
 		if (!name || !email || !message) {
 			return res.status(400).send('Todos os campos são obrigatórios.');
 		}
@@ -68,24 +76,24 @@ router.post(
 		// Limitar o tamanho da mensagem
 		if (message.length > 1000) {
 			return res.status(400).send('A mensagem é demasiado longa.');
-		}
+		} */
 
 		// Dados do email
 		const data = {
-			from: `Teu Nome <${email}>`,
-			to: 'g.filipe.r@gmail.com',
+			from: `Teu Nome <mailgun@sandboxb7daad15fc6b47ba96d1fab106934b51.mailgun.org>`,
+			to: ['g.filipe.r@gmail.com'],
 			subject: `Nova mensagem de ${name}`,
 			text: `Nome: ${name}\nEmail: ${email}\n\nMensagem:\n${message}`,
 		};
 
 		// Enviar email através do Mailgun
 		try {
-			const body = await mg.messages().send(data);
-			console.log('Email enviado:', body);
+			const msg = await mg.messages.create('sandboxb7daad15fc6b47ba96d1fab106934b51.mailgun.org', data);
+			console.log('Email enviado:', msg);
 			res.status(200).send('Mensagem enviada com sucesso!');
 		} catch (error) {
 			console.log('Erro ao enviar email:', error);
-			res.status(500).send('Erro ao enviar email.');
+			res.status(500).json({ message: 'Erro ao enviar email', error: error.message });
 		}
 
 		/* try {

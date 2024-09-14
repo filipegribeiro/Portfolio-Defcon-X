@@ -121,7 +121,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
 		if (response.ok) {
 			document.getElementById('responseMessage').textContent = 'Mensagem enviada com sucesso!';
 		} else {
-			document.getElementById('responseMessage').textContent = `Erro: ${result.errors.map(err => err.msg).join(', ')}`;
+			document.getElementById('responseMessage').textContent = `Erro: ${response.errors.map(err => err.msg).join(', ')}`;
 		}
 	} catch (error) {
 		document.getElementById('responseMessage').textContent = 'Erro ao enviar a mensagem.';
