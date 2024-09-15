@@ -1,3 +1,5 @@
+console.log('Script loaded');
+
 //**** MENU MOBILE ****
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -33,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //**** DOWNLOAD BUTTON ****
 
-$('.btn-circle-download').click(function () {
+/* $('.btn-circle-download').click(function () {
 	$(this).addClass('load');
 	setTimeout(function () {
 		$('.btn-circle-download').addClass('done');
@@ -41,7 +43,7 @@ $('.btn-circle-download').click(function () {
 	setTimeout(function () {
 		$('.btn-circle-download').removeClass('load done');
 	}, 5000);
-});
+}); */
 
 //**** SLIDER ****
 
@@ -50,8 +52,8 @@ const sliderContainer = document.querySelector('[data-slider-container]');
 const sliderPrevBtn = document.querySelector('[data-slider-prev]');
 const sliderNextBtn = document.querySelector('[data-slider-next]');
 
-let totalSliderVisibleItems = Number(getComputedStyle(slider).getPropertyValue('--slider-items'));
-let totalSlidableItems = sliderContainer.childElementCount - totalSliderVisibleItems;
+/* let totalSliderVisibleItems = Number(getComputedStyle(slider).getPropertyValue('--slider-items')); */
+/* let totalSlidableItems = sliderContainer.childElementCount - totalSliderVisibleItems; */
 
 let currentSlidePos = 0;
 
@@ -73,7 +75,7 @@ const slideNext = function () {
 	moveSliderItem();
 };
 
-sliderNextBtn.addEventListener('click', slideNext);
+/* sliderNextBtn.addEventListener('click', slideNext); */
 
 /* PREVIOUS SLIDE */
 
@@ -87,20 +89,64 @@ const slidePrev = function () {
 	moveSliderItem();
 };
 
-sliderPrevBtn.addEventListener('click', slidePrev);
+/* sliderPrevBtn.addEventListener('click', slidePrev); */
 
 /* RESPONSIVE */
 
-window.addEventListener('resize', function () {
+/* window.addEventListener('resize', function () {
 	totalSliderVisibleItems = Number(getComputedStyle(slider).getPropertyValue('--slider-items'));
 	totalSlidableItems = sliderContainer.childElementCount - totalSliderVisibleItems;
 
 	moveSliderItem();
-});
+}); */
 
 //**** CONTACT FORM ****
 
-document.getElementById('contactForm').addEventListener('submit', async function (event) {
+document.addEventListener('DOMContentLoaded', function () {
+	const contactForm = document.getElementById('contactForm');
+
+	if (contactForm) {
+		contactForm.addEventListener('submit', async function (event) {
+			event.preventDefault(); // Evita o envio padrão do formulário
+			console.log('Form submitted');
+
+			const name = document.getElementById('name').value;
+			const email = document.getElementById('email').value;
+			const message = document.getElementById('message').value;
+
+			try {
+				const response = await fetch('http://localhost:3000/email/send-email', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({ name, email, message }),
+				});
+
+				// Verificar se a resposta foi bem sucedida
+				if (response.ok) {
+					document.getElementById('responseMessage').textContent = 'Mensagem enviada com sucesso!';
+				} else {
+					const result = await response.json(); // Extrair o corpo da resposta JSON
+					if (result.errors) {
+						// Verificar se há erros e mostrá-los
+						document.getElementById('responseMessage').textContent = `Erro: ${result.errors.map(err => err.msg).join(', ')}`;
+					} else {
+						// Caso não haja 'errors', mostrar outra mensagem genérica
+						document.getElementById('responseMessage').textContent = 'Erro ao enviar a mensagem.';
+					}
+				}
+			} catch (error) {
+				document.getElementById('responseMessage').textContent = 'Erro ao enviar a mensagem.';
+				console.log(error);
+			}
+		});
+	} else {
+		console.log('Form not found');
+	}
+});
+
+/* document.getElementById('contactForm').addEventListener('submit', async function (event) {
 	event.preventDefault(); // Evita o envio padrão do formulário
 
 	const name = document.getElementById('name').value;
@@ -126,7 +172,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
 	} catch (error) {
 		document.getElementById('responseMessage').textContent = 'Erro ao enviar a mensagem.';
 	}
-});
+}); */
 
 //**** TOAST PROCESS ****/
 
