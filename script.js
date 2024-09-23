@@ -1,108 +1,102 @@
-console.log('Script loaded');
-
-//**** MENU MOBILE ****
-
 document.addEventListener('DOMContentLoaded', function () {
+	console.log('DOM fully loaded and parsed');
+
+	//**** MENU MOBILE ****
 	const btnMobile = document.getElementById('btn-mobile');
-
-	function toggleMenu(event) {
-		if (event.type === 'touchstart') event.preventDefault();
-		const nav = document.getElementById('nav');
-		nav.classList.toggle('active');
-		const active = nav.classList.contains('active');
-		event.currentTarget.setAttribute('aria-expanded', active);
-		if (active) {
-			event.currentTarget.setAttribute('aria-label', 'Fecha Menu');
-		} else {
-			event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+	if (btnMobile) {
+		function toggleMenu(event) {
+			if (event.type === 'touchstart') event.preventDefault();
+			const nav = document.getElementById('nav');
+			nav.classList.toggle('active');
+			const active = nav.classList.contains('active');
+			event.currentTarget.setAttribute('aria-expanded', active);
+			if (active) {
+				event.currentTarget.setAttribute('aria-label', 'Fecha Menu');
+			} else {
+				event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+			}
 		}
-	}
-	btnMobile.addEventListener('click', toggleMenu);
-	btnMobile.addEventListener('touchstart', toggleMenu);
-});
-
-//**** MULTIPLE TESTE TYPED ****
-
-document.addEventListener('DOMContentLoaded', function () {
-	let typed = new Typed('#text-changed', {
-		strings: ['Teacher of Musical Education', 'Music Therapist', 'Junior Fullstack Web Developer'],
-		typeSpeed: 100,
-		backSpeed: 50,
-		backDelay: 50,
-		loop: true,
-	});
-});
-
-//**** DOWNLOAD BUTTON ****
-
-/* $('.btn-circle-download').click(function () {
-	$(this).addClass('load');
-	setTimeout(function () {
-		$('.btn-circle-download').addClass('done');
-	}, 1000);
-	setTimeout(function () {
-		$('.btn-circle-download').removeClass('load done');
-	}, 5000);
-}); */
-
-//**** SLIDER ****
-
-const slider = document.querySelector('[data-slider]');
-const sliderContainer = document.querySelector('[data-slider-container]');
-const sliderPrevBtn = document.querySelector('[data-slider-prev]');
-const sliderNextBtn = document.querySelector('[data-slider-next]');
-
-/* let totalSliderVisibleItems = Number(getComputedStyle(slider).getPropertyValue('--slider-items')); */
-/* let totalSlidableItems = sliderContainer.childElementCount - totalSliderVisibleItems; */
-
-let currentSlidePos = 0;
-
-const moveSliderItem = function () {
-	sliderContainer.style.transform = `translateX(-${sliderContainer.children[currentSlidePos].offsetLeft}px)`;
-};
-
-/* NEXT SLIDE */
-
-const slideNext = function () {
-	const slideEnd = currentSlidePos >= totalSlidableItems;
-
-	if (slideEnd) {
-		currentSlidePos = 0;
+		btnMobile.addEventListener('click', toggleMenu);
+		btnMobile.addEventListener('touchstart', toggleMenu);
 	} else {
-		currentSlidePos++;
+		console.error('Menu mobile button not found');
 	}
 
-	moveSliderItem();
-};
-
-/* sliderNextBtn.addEventListener('click', slideNext); */
-
-/* PREVIOUS SLIDE */
-
-const slidePrev = function () {
-	if (currentSlidePos <= 0) {
-		currentSlidePos = totalSlidableItems;
+	//**** MULTIPLE TESTE TYPED ****
+	const typedElement = document.getElementById('text-changed');
+	if (typedElement) {
+		let typed = new Typed('#text-changed', {
+			strings: ['Teacher of Musical Education', 'Music Therapist', 'Junior Fullstack Web Developer'],
+			typeSpeed: 100,
+			backSpeed: 50,
+			backDelay: 50,
+			loop: true,
+		});
 	} else {
-		currentSlidePos--;
+		console.error('#text-changed element not found');
 	}
 
-	moveSliderItem();
-};
+	//**** SLIDER ****
+	let items = document.querySelectorAll('.slider .list .item');
+	let next = document.getElementById('next');
+	let prev = document.getElementById('prev');
+	let thumbnails = document.querySelectorAll('.thumbnail .item');
 
-/* sliderPrevBtn.addEventListener('click', slidePrev); */
+	if (items && next && prev && thumbnails) {
+		// config param
+		let countItem = items.length;
+		let itemActive = 0;
+		// event next click
+		next.onclick = function () {
+			itemActive = itemActive + 1;
+			if (itemActive >= countItem) {
+				itemActive = 0;
+			}
+			showSlider();
+		};
+		//event prev click
+		prev.onclick = function () {
+			itemActive = itemActive - 1;
+			if (itemActive < 0) {
+				itemActive = countItem - 1;
+			}
+			showSlider();
+		};
+		// auto run slider
+		let refreshInterval = setInterval(() => {
+			next.click();
+		}, 10000);
 
-/* RESPONSIVE */
+		function showSlider() {
+			// remove item active old
+			let itemActiveOld = document.querySelector('.slider .list .item.active');
+			let thumbnailActiveOld = document.querySelector('.thumbnail .item.active');
+			itemActiveOld.classList.remove('active');
+			thumbnailActiveOld.classList.remove('active');
 
-/* window.addEventListener('resize', function () {
-	totalSliderVisibleItems = Number(getComputedStyle(slider).getPropertyValue('--slider-items'));
-	totalSlidableItems = sliderContainer.childElementCount - totalSliderVisibleItems;
+			// active new item
+			items[itemActive].classList.add('active');
+			thumbnails[itemActive].classList.add('active');
 
-	moveSliderItem();
-}); */
+			// clear auto time run slider
+			clearInterval(refreshInterval);
+			refreshInterval = setInterval(() => {
+				next.click();
+			}, 10000);
+		}
 
-//**** CONTACT FORM ****
+		// click thumbnail
+		thumbnails.forEach((thumbnail, index) => {
+			thumbnail.addEventListener('click', () => {
+				itemActive = index;
+				showSlider();
+			});
+		});
+	} else {
+		console.error('Slider elements not found');
+	}
 
-document.addEventListener('DOMContentLoaded', function () {
+	//**** CONTACT FORM ****
 	const contactForm = document.getElementById('contactForm');
 
 	if (contactForm) {
@@ -114,6 +108,22 @@ document.addEventListener('DOMContentLoaded', function () {
 			const email = document.getElementById('email').value;
 			const message = document.getElementById('message').value;
 
+			// Validação dos campos obrigatórios
+			if (!name) {
+				showToast('Name is required!', 'warning');
+				return;
+			}
+
+			if (!email) {
+				showToast('Email is required!', 'warning');
+				return;
+			}
+
+			if (!message) {
+				showToast('Message is required!', 'warning');
+				return;
+			}
+
 			try {
 				const response = await fetch('http://localhost:3000/email/send-email', {
 					method: 'POST',
@@ -123,21 +133,24 @@ document.addEventListener('DOMContentLoaded', function () {
 					body: JSON.stringify({ name, email, message }),
 				});
 
-				// Verificar se a resposta foi bem sucedida
+				// Verificar se a resposta foi bem-sucedida
 				if (response.ok) {
-					document.getElementById('responseMessage').textContent = 'Mensagem enviada com sucesso!';
+					showToast('Message sent successfully! Thanks and see you soon!', 'success');
+					setTimeout(() => {
+						// Recarregar a página após 4 segundos e ir para o topo
+						window.scrollTo(0, 0);
+						location.reload();
+					}, 4000); // Espera 4 segundos antes de recarregar
 				} else {
 					const result = await response.json(); // Extrair o corpo da resposta JSON
 					if (result.errors) {
-						// Verificar se há erros e mostrá-los
-						document.getElementById('responseMessage').textContent = `Erro: ${result.errors.map(err => err.msg).join(', ')}`;
+						showToast('Something went wrong. Please, try again!', 'error');
 					} else {
-						// Caso não haja 'errors', mostrar outra mensagem genérica
-						document.getElementById('responseMessage').textContent = 'Erro ao enviar a mensagem.';
+						showToast('Error sending the message.', 'error');
 					}
 				}
 			} catch (error) {
-				document.getElementById('responseMessage').textContent = 'Erro ao enviar a mensagem.';
+				showToast('Error sending the message, please try this email: g.filipe.r@gmail.com!', 'error');
 				console.log(error);
 			}
 		});
@@ -146,37 +159,22 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 });
 
-/* document.getElementById('contactForm').addEventListener('submit', async function (event) {
-	event.preventDefault(); // Evita o envio padrão do formulário
+// *** TOASTS PROCESS ***
 
-	const name = document.getElementById('name').value;
-	const email = document.getElementById('email').value;
-	const message = document.getElementById('message').value;
-
-	try {
-		const response = await fetch('http://localhost:3000/email/send-email', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({ name, email, message }),
-		});
-
-		const result = await response.json();
-
-		if (response.ok) {
-			document.getElementById('responseMessage').textContent = 'Mensagem enviada com sucesso!';
-		} else {
-			document.getElementById('responseMessage').textContent = `Erro: ${response.errors.map(err => err.msg).join(', ')}`;
-		}
-	} catch (error) {
-		document.getElementById('responseMessage').textContent = 'Erro ao enviar a mensagem.';
+// Função para garantir que o contêiner de toasts exista
+function getToastContainer() {
+	let container = document.querySelector('.toast-container');
+	if (!container) {
+		container = document.createElement('div');
+		container.classList.add('toast-container');
+		document.body.appendChild(container);
 	}
-}); */
+	return container;
+}
 
-//**** TOAST PROCESS ****/
-
+// Função para exibir os toasts
 function showToast(message, type) {
+	const container = getToastContainer(); // Garante que o container existe
 	const toast = document.createElement('div');
 	toast.classList.add('toast');
 	toast.classList.add(type);
@@ -203,14 +201,14 @@ function showToast(message, type) {
 
 	toast.appendChild(icon);
 	toast.appendChild(document.createTextNode(message));
-	document.body.appendChild(toast);
+	container.appendChild(toast);
 
 	setTimeout(() => {
 		toast.classList.add('show');
 		setTimeout(() => {
 			toast.classList.remove('show');
 			setTimeout(() => {
-				document.body.removeChild(toast);
+				container.removeChild(toast);
 			}, 300);
 		}, 3000);
 	}, 100);

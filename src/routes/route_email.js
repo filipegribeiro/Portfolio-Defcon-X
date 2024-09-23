@@ -81,7 +81,7 @@ router.post(
 
 		// Dados do email
 		const data = {
-			from: `Teu Nome <mailgun@sandboxb7daad15fc6b47ba96d1fab106934b51.mailgun.org>`,
+			from: `Portfolio de Filipe Ribeiro <mailgun@sandboxb7daad15fc6b47ba96d1fab106934b51.mailgun.org>`,
 			to: ['g.filipe.r@gmail.com'],
 			subject: `Nova mensagem de ${name}`,
 			text: `Nome: ${name}\nEmail: ${email}\n\nMensagem:\n${message}`,
