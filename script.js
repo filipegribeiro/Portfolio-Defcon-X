@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const typedElement = document.getElementById('text-changed');
 	if (typedElement) {
 		let typed = new Typed('#text-changed', {
-			strings: ['Teacher of Musical Education', 'Music Therapist', 'Junior Fullstack Web Developer'],
+			strings: ['Teacher of Musical Education', 'Music Therapist', 'Fullstack Web Developer'],
 			typeSpeed: 100,
 			backSpeed: 50,
 			backDelay: 50,
@@ -94,6 +94,35 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	} else {
 		console.error('Slider elements not found');
+	}
+
+	//**** RESUME ****
+	const btnExp = document.querySelector('.btn-exp');
+	const btnEduc = document.querySelector('.btn-educ');
+	const expSection = document.querySelector('.column-exp');
+	const educSection = document.querySelector('.column-educ');
+
+	// Exibe apenas a coluna de experiência ao carregar a página
+	if (expSection && educSection) {
+		expSection.style.display = 'block'; // Exibe a secção de experiência
+		educSection.style.display = 'none'; // Oculta a secção de educação
+
+		// Função para alternar entre as secções de experiência e educação
+		function toggleSection(showExp) {
+			if (showExp) {
+				expSection.style.display = 'block';
+				educSection.style.display = 'none';
+			} else {
+				expSection.style.display = 'none';
+				educSection.style.display = 'block';
+			}
+		}
+
+		// Alterna as secções ao clicar nos botões
+		btnExp.addEventListener('click', () => toggleSection(true));
+		btnEduc.addEventListener('click', () => toggleSection(false));
+	} else {
+		console.error('Experience or education sections not found');
 	}
 
 	//**** CONTACT FORM ****
