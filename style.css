@@ -37,7 +37,7 @@ Assigned to:	www.filipegribeiro.com
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Fira Code', monospace;
-	border: 1px solid #f7a800;
+	/* border: 1px solid #f7a800; */
 }
 
 a {
@@ -947,7 +947,7 @@ li {
 }
 @media screen and (max-width: 959px) {
 	.about {
-		height: 80vh;
+		height: 120vh;
 	}
 	.thumbnail {
 		justify-content: start;
@@ -1334,7 +1334,7 @@ li {
 ---------------------------------------------------*/
 
 .myskills {
-	height: 55vh;
+	height: 100vh;
 	padding-top: 2rem;
 	margin-top: 2rem;
 	padding-top: 2rem;
@@ -1342,7 +1342,7 @@ li {
 
 @media screen and (max-width: 980px) {
 	.myskills {
-		height: 85vh;
+		height: 125vh;
 		margin-top: 8rem;
 		margin-bottom: 8rem;
 	}
@@ -1704,12 +1704,12 @@ li {
 	07. Projects Section
 ---------------------------------------------------*/
 .projects {
-	height: 75vh;
+	height: 120vh;
 }
 
 @media screen and (max-width: 980px) {
 	.projects {
-		height: 120vh;
+		height: 135vh;
 		margin-top: 13rem;
 	}
 }
@@ -1876,7 +1876,7 @@ li {
 ---------------------------------------------------*/
 
 .contact {
-	height: 50vh;
+	height: 80vh;
 	padding-top: 2rem;
 	margin-top: 2rem;
 	background: #000000;
@@ -1885,7 +1885,7 @@ li {
 
 @media screen and (max-width: 980px) {
 	.contact {
-		height: 40vh;
+		height: 70vh;
 	}
 }
 
