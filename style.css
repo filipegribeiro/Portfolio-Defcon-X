@@ -1180,10 +1180,11 @@ li {
 
 .education-title span {
 	color: #aaff00;
+	font-size: 2.5rem;
 }
 
 .column1 p {
-	font-size: 1rem;
+	font-size: 1.2rem;
 	color: #f2f2f2;
 	margin-bottom: 1.5rem;
 }
@@ -1232,6 +1233,7 @@ li {
 .column-exp h2 span,
 .column-educ h2 span {
 	color: #aaff00;
+	font-size: 2rem;
 }
 
 .column-exp p,
