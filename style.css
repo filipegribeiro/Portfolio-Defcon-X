@@ -363,7 +363,7 @@ li {
 	}
 
 	#nav.active #menu {
-		width: 30vw;
+		width: 50%;
 	}
 
 	.navbar a:hover:after {
@@ -448,7 +448,7 @@ li {
 
 @media screen and (max-width: 959px) {
 	.home {
-		height: 70vh;
+		height: 100vh;
 	}
 }
 
@@ -945,7 +945,7 @@ li {
 	position: absolute;
 	inset: auto 10px 10px 10px;
 }
-@media screen and (max-width: 959px) {
+/* @media screen and (max-width: 400px) {
 	.about {
 		height: 120vh;
 	}
@@ -955,6 +955,28 @@ li {
 	.slider .list .item .content h2 {
 		font-size: 60px;
 	}
+	.arrows {
+		top: 10%;
+	}
+} */
+
+@media (max-width: 400px) {
+	.about {
+		height: 100%;
+	}
+
+	.slider .item {
+		height: 100%;
+	}
+
+	.slider .list .item .content h2 {
+		font-size: 60px;
+	}
+
+	.thumbnail {
+		justify-content: start;
+	}
+
 	.arrows {
 		top: 10%;
 	}
