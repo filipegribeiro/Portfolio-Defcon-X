@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------
 Project:	Portfolio Filipe Ribeiro
-Version:	0.7
+Version:	0.9
 Last change:	05/09/2024
 Assigned to:	www.filipegribeiro.com 
 -------------------------------------------------------------------*/
@@ -11,7 +11,7 @@ Assigned to:	www.filipegribeiro.com
 02. Navigation
 03. Hero Section (Home)
 04. About Section
-05. Education Section
+05. Resume Section
 06. My Skills Section
 07. Projects Section
 08. Contact Me
@@ -1165,7 +1165,7 @@ li {
 }
 
 /*--------------------------------------------------
-	05. Resume Settings
+	05. Resume Section
 ---------------------------------------------------*/
 
 /* Section Base */
