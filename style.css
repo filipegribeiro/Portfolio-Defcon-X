@@ -58,61 +58,6 @@ html {
 	scroll-behavior: smooth;
 }
 
-/* !!!! VERIFICAR ESTE MEDIA QUERIE !!!!! */
-
-/* .home {
-	color: red;
-} */
-
-@media (min-width: 1199px) {
-	html {
-		font-size: 20px;
-		font-weight: bold;
-	}
-}
-
-@media (max-width: 1090px) {
-	html {
-		font-size: 15px;
-		font-weight: bold;
-	}
-}
-
-@media (max-width: 1050px) {
-	html {
-		font-size: 14px;
-		font-weight: bold;
-	}
-}
-
-@media (max-width: 1030px) {
-	html {
-		font-size: 13px;
-		font-weight: bold;
-	}
-}
-
-@media (max-width: 998px) {
-	html {
-		font-size: 12px;
-		font-weight: bold;
-	}
-}
-
-@media (max-width: 768px) {
-	html {
-		font-size: 11px;
-		font-weight: bold;
-	}
-}
-
-@media (max-width: 480px) {
-	html {
-		font-size: 10px;
-		font-weight: bold;
-	}
-}
-
 body {
 	background-color: #000000;
 	color: #f2f2f2;
@@ -199,21 +144,6 @@ body::-webkit-scrollbar-thumb {
 	z-index: 1000;
 }
 
-/* !!!! VERIFICAR ESTE MEDIA QUERIE !!!!! */
-
-/* .home {
-	color: red;
-} */
-
-@media (min-width: 2080px) {
-	header {
-		width: 100%;
-		max-width: 2080px;
-		left: 0;
-		right: 0;
-	}
-}
-
 .header::before {
 	content: '';
 	position: absolute;
@@ -243,27 +173,6 @@ body::-webkit-scrollbar-thumb {
 	background: #141414;
 	animation: showRight 1s ease forwards;
 	animation-delay: 1s;
-}
-
-/* !!!! VERIFICAR ESTE MEDIA QUERIE !!!!! */
-
-/* .home {
-	color: red;
-} */
-
-@media (max-width: 959px) {
-	.header {
-		padding: 10px 5%;
-		justify-content: space-between;
-	}
-
-	.logo {
-		font-size: 32px;
-	}
-
-	#btn-mobile {
-		right: 10px;
-	}
 }
 
 /** <!-- ========== NAVBAR ========== --> */
@@ -300,18 +209,6 @@ li {
 	animation-delay: 1s;
 }
 
-/* TENTAR COLOCAR A BARRA POR BAIXO A COBRI O <a><a/> */
-/* .navbar a::after {
-	content: '';
-	position: absolute;
-	background-color: #aaff00;
-	width: 0;
-	height: 3px;
-	left: 0;
-	bottom: -6px;
-	transition: width 0.5s;
-} */
-
 .navbar a:hover:after {
 	color: #aaff00;
 	width: 100%;
@@ -326,15 +223,9 @@ li {
 	display: none;
 }
 
-/* !!!! VERIFICAR ESTE MEDIA QUERIE !!!!! */
-
-/* .home {
-	color: red;
-} */
-
 /* Button */
 
-@media (max-width: 959px) {
+@media (max-width: 991px) {
 	#btn-mobile {
 		display: flex;
 		position: absolute;
@@ -451,18 +342,6 @@ li {
 	background: linear-gradient(180deg, #000000 5%, #00000000 40%, #00000000 60%, #000000 92%);
 	background-size: 25rem;
 	background-position: right;
-}
-
-/* !!!! VERIFICAR ESTE MEDIA QUERIE !!!!! */
-
-/* .home {
-	color: red;
-} */
-
-@media screen and (max-width: 959px) {
-	/* .home {
-		height: 100vh;
-	} */
 }
 
 .home-content {
@@ -617,118 +496,6 @@ li {
 
 .btn-box a:hover::before {
 	width: 100%;
-}
-
-/* !!!! VERIFICAR ESTE MEDIA QUERIE !!!!! */
-
-/* .home {
-	color: red;
-} */
-
-/* Estilos para Mobile Devices (até 766px) */
-@media (max-width: 768px) {
-	.home {
-		padding: 8rem;
-		margin-top: 12rem;
-		background-position: center;
-	}
-
-	.home-content {
-		height: 800px;
-	}
-
-	.home-content h1 {
-		font-size: 36px;
-	}
-
-	.home-content h3 {
-		font-size: 20px;
-	}
-
-	.multiple-text {
-		font-size: 22px;
-	}
-
-	.btn-box a {
-		height: 55px;
-		margin-bottom: 10px;
-	}
-
-	.social-btns {
-		justify-content: flex-start;
-		width: 100%;
-	}
-}
-
-/* Estilos para Tablets (768px até 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-	.home {
-		padding: 8rem;
-		margin-top: 12rem;
-		background-position: center;
-	}
-
-	.home-content h1 {
-		font-size: 48px;
-	}
-
-	.home-content h3 {
-		font-size: 20px;
-	}
-
-	.multiple-text {
-		font-size: 22px;
-	}
-
-	.btn-box {
-		width: 70%;
-	}
-
-	.social-btns {
-		justify-content: flex-start;
-	}
-}
-
-/* Estilos para Desktops (1200px e acima) */
-@media (min-width: 991px) and (max-width: 1200px) {
-	.home {
-		padding: 10rem;
-		background-position: right;
-	}
-
-	.home-content h1 {
-		font-size: 56px;
-	}
-
-	.home-content h3 {
-		font-size: 26px;
-	}
-
-	.multiple-text {
-		font-size: 32px;
-	}
-
-	.btn-box {
-		width: 345px;
-	}
-
-	.social-btns {
-		justify-content: flex-start;
-	}
-}
-
-@media (min-width: 1200px) {
-	.home {
-		padding: 10rem;
-		background-position: right;
-	}
-}
-
-/* KEYFRAMES ANIMATION */
-@keyframes showRight {
-	100% {
-		width: 0;
-	}
 }
 
 /*--------------------------------------------------
@@ -960,36 +727,6 @@ li {
 .thumbnail .item .content {
 	position: absolute;
 	inset: auto 10px 10px 10px;
-}
-
-/* !!!! VERIFICAR ESTE MEDIA QUERIE !!!!! */
-
-/* .home {
-	color: red;
-} */
-
-@media (max-width: 400px) {
-	.about {
-		height: 100%;
-	}
-
-	.slider .item {
-		height: 100%;
-	}
-
-	.slider .list .item .content h2 {
-		font-size: 50px;
-		padding-top: 25px;
-		padding-bottom: 25px;
-	}
-
-	.thumbnail {
-		justify-content: start;
-	}
-
-	.arrows {
-		top: 10%;
-	}
 }
 
 /** New Social btns **/
@@ -1536,7 +1273,7 @@ li {
 }
 
 .technical-bars .bar .info span {
-	font-size: 17px;
+	font-size: 16px;
 	font-weight: 500;
 	animation: showText 0.5s 1s linear forwards;
 	opacity: 0;
@@ -2122,11 +1859,48 @@ li {
 	10. Responsiveness (Mobile First)
 ---------------------------------------------------*/
 
+/* HTML configuration size */
+
+@media (max-width: 998px) {
+	html {
+		font-size: 12px;
+		font-weight: bold;
+	}
+}
+
+@media (max-width: 1030px) {
+	html {
+		font-size: 13px;
+		font-weight: bold;
+	}
+}
+
+@media (max-width: 1050px) {
+	html {
+		font-size: 14px;
+		font-weight: bold;
+	}
+}
+
+@media (max-width: 1090px) {
+	html {
+		font-size: 15px;
+		font-weight: bold;
+	}
+}
+
+@media (min-width: 1199px) {
+	html {
+		font-size: 20px;
+		font-weight: bold;
+	}
+}
+
 /* Small Devices (320px - 480px) */
-@media (max-width: 400px) {
-	.header {
-		padding: 10px;
-		justify-content: space-between;
+@media (min-width: 320px) and (max-width: 480px) {
+	html {
+		font-size: 10px;
+		font-weight: bold;
 	}
 
 	.logo {
@@ -2148,25 +1922,13 @@ li {
 	}
 
 	#menu {
-		position: fixed;
-		top: 0;
-		right: 0;
-		width: 0;
-		height: 100vh;
-		background-color: #000000;
-		color: #aaff00;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		transition: width 0.6s ease;
-		gap: 1rem;
+		gap: 3rem;
 	}
 
 	.home {
-		height: auto;
+		padding-top: 8rem;
+		height: fit-content;
 		flex-direction: column;
-		padding: 1rem;
 		background-position: center;
 	}
 
@@ -2174,6 +1936,7 @@ li {
 		padding: 0;
 		width: 100%;
 		margin-top: 1rem;
+		height: fit-content;
 	}
 
 	.home-content h1 {
@@ -2196,15 +1959,19 @@ li {
 		line-height: 2;
 	}
 
-	/* .btn-box {
-		gap: 8px;
+	.home-content .btn-box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		flex-direction: column;
-		width: 500px;
-		height: 500px;
-	} */
+		width: 100%;
+		height: 120px;
+		gap: 1rem;
+	}
 
 	.about {
-		padding: 1rem;
+		padding-top: 10rem;
+		height: fit-content;
 	}
 
 	.about h2 {
@@ -2226,14 +1993,22 @@ li {
 		line-height: 2;
 	}
 
-	.slider .list .item .content .h2 {
-		font-size: 50px;
+	.about-content .slider {
+		height: 400px;
+	}
+
+	.slider .list .item {
+		height: auto;
+	}
+
+	.slider .list .item .content h2 {
+		font-size: 52px;
 		padding-top: 25px;
 		padding-bottom: 25px;
 	}
 
 	.slider .list .item .content p {
-		font-size: 13px;
+		font-size: 16px;
 		line-height: 2;
 	}
 
@@ -2246,8 +2021,10 @@ li {
 	}
 
 	.exp-educ {
+		padding-top: 10rem;
+		height: fit-content;
 		flex-direction: column;
-		gap: 8rem;
+		gap: 4rem;
 	}
 
 	.column1,
@@ -2301,7 +2078,7 @@ li {
 	}
 
 	.little-title {
-		font-size: 14px;
+		font-size: 16px;
 	}
 
 	.main-tittle {
@@ -2312,12 +2089,12 @@ li {
 	}
 
 	.company {
-		font-size: 20px;
+		font-size: 16px;
 	}
 
 	.myskills {
-		padding: 1rem;
-		margin-bottom: 45rem;
+		padding-top: 8rem;
+		height: fit-content;
 	}
 
 	.myskills h1 {
@@ -2341,26 +2118,34 @@ li {
 	}
 
 	.action-container h2 {
-		font-size: 20px;
-	}
-
-	.action-container span {
 		font-size: 26px;
 	}
 
+	.action-container span {
+		font-size: 32px;
+	}
+
+	.radial-bar .percentage {
+		font-size: 20px;
+	}
+
+	.radial-bar .text {
+		font-size: 16px;
+	}
+
 	.projects {
-		padding: 1rem;
+		padding-top: 8rem;
 		margin-top: 1rem;
-		margin-bottom: 150rem;
+		height: fit-content;
 	}
 
 	.section-title {
-		font-size: 30px;
+		font-size: 32px;
 		padding-bottom: 25px;
 	}
 
 	.multiple-text {
-		font-size: 36px;
+		font-size: 38px;
 	}
 
 	.project-card {
@@ -2377,7 +2162,7 @@ li {
 	}
 
 	.project-card p {
-		font-size: 14px;
+		font-size: 16px;
 	}
 
 	.btn {
@@ -2386,13 +2171,13 @@ li {
 	}
 
 	.contact {
-		padding: 1rem;
-		margin-top: 11rem;
-		margin-bottom: 22rem;
+		padding-top: 8rem;
+		height: fit-content;
 	}
 
 	.sub-title-contact {
 		font-size: 32px;
+		padding-bottom: 25px;
 	}
 
 	.highlight {
@@ -2421,23 +2206,33 @@ li {
 	}
 
 	.footer {
-		padding: 1rem;
-		padding-bottom: 25px;
+		padding-top: 8rem;
+		height: fit-content;
 	}
 
 	.footer-content {
-		padding: 1rem;
-		gap: 1rem;
+		/* padding-top: 1rem; */
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.footer-content p {
+		text-align: center;
 		font-size: 16px;
+		line-height: 2;
 	}
 }
 
 /* Medium Devices (481px - 768px) */
 
-@media (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 768px) {
+	html {
+		font-size: 12px;
+		font-weight: bold;
+	}
+
 	.header {
 		padding: 10px;
 		justify-content: space-between;
@@ -2474,20 +2269,24 @@ li {
 		justify-content: center;
 		align-items: center;
 		transition: width 0.6s ease;
-		gap: 1.5rem;
+		gap: 5rem;
 	}
 
 	.home {
-		height: auto;
+		padding-top: 8rem;
+		height: fit-content;
 		flex-direction: column;
-		padding: 2rem;
 		background-position: center;
 	}
 
 	.home-content {
 		padding: 0;
 		width: 100%;
-		margin-top: 2rem;
+	}
+
+	.home-content p {
+		font-size: 16px;
+		line-height: 2;
 	}
 
 	.home-content h1 {
@@ -2498,13 +2297,21 @@ li {
 		font-size: 20px;
 	}
 
+	.multiple-text {
+		font-size: 22px;
+	}
+
 	.btn-box {
 		gap: 8px;
 	}
 
+	.btn-box a {
+		margin-bottom: 10px;
+	}
+
 	.about {
-		height: 100%;
-		padding: 1rem;
+		height: fit-content;
+		padding-top: 8rem;
 	}
 
 	.about h2 {
@@ -2523,10 +2330,11 @@ li {
 
 	.about-content p {
 		font-size: 16px;
+		line-height: 2;
 	}
 
-	.slider .item {
-		height: 100%;
+	.slider {
+		height: 900px;
 	}
 
 	.slider .list .item .content h2 {
@@ -2549,6 +2357,8 @@ li {
 	}
 
 	.exp-educ {
+		padding-top: 8rem;
+		height: fit-content;
 		flex-direction: column;
 		gap: 8rem;
 	}
@@ -2571,11 +2381,44 @@ li {
 	.column1 p {
 		font-size: 16px;
 		line-height: 2;
+	}
+
+	.btn-exp,
+	.btn-educ {
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+	.column-exp p,
+	.column-educ p {
+		font-size: 16px;
+		line-height: 2;
+	}
+
+	.column-exp h2,
+	.column-educ h2 {
+		font-size: 28px;
 		padding-bottom: 25px;
 	}
 
+	.column-exp h2 span,
+	.column-educ h2 span {
+		font-size: 32px;
+	}
+
+	.boxes h3,
+	.boxes span,
+	.boxes p {
+		font-size: 16px;
+	}
+
 	.myskills {
-		padding: 1rem;
+		padding-top: 6rem;
+		height: fit-content;
+	}
+
+	.sub-title-skills {
+		padding-bottom: 25px;
 	}
 
 	.main-container {
@@ -2589,17 +2432,66 @@ li {
 		width: 100%;
 	}
 
+	.heading1 {
+		font-size: 28px;
+	}
+
+	.heading1 span {
+		font-size: 32px;
+	}
+
+	.technical-bars .bar .info span {
+		font-size: 18px;
+	}
+
+	.radial-bar .text {
+		font-size: 18px;
+	}
+
 	.projects {
-		padding: 1rem;
-		margin-top: 1rem;
+		padding-top: 8rem;
+		gap: 2rem;
+		height: fit-content;
+	}
+
+	.section-title {
+		font-size: 32px;
+		padding-bottom: 25px;
+	}
+
+	.multiple-text {
+		font-size: 38px;
 	}
 
 	.project-card {
-		padding: 2rem;
+		padding: 1.5rem;
+		font-size: 16px;
+	}
+
+	.project-card img {
+		width: 30vw;
+	}
+
+	.btn-group {
+		height: 75px;
 	}
 
 	.contact {
-		padding: 1rem;
+		padding-top: 3rem;
+		height: fit-content;
+	}
+
+	.sub-title-contact {
+		font-size: 32px;
+		padding-bottom: 25px;
+	}
+
+	.highlight {
+		font-size: 38px;
+	}
+
+	.contact-description {
+		line-height: 2;
 	}
 
 	.contact-form {
@@ -2609,11 +2501,289 @@ li {
 	}
 
 	.footer {
-		padding: 1rem;
+		padding-top: 8rem;
+		height: fit-content;
 	}
 
 	.footer-content {
-		padding: 1rem;
-		gap: 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.footer-content p {
+		text-align: center;
+		font-size: 16px;
+		line-height: 2;
+	}
+}
+
+/* Estilos para Tablets (768px até 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+	.home {
+		padding: 8rem;
+		margin-top: 12rem;
+		background-position: center;
+		height: auto;
+		flex-direction: column;
+	}
+
+	.home-content {
+		padding: 0;
+		width: 100%;
+		margin-top: 2rem;
+	}
+
+	.home-content h1 {
+		font-size: 48px;
+	}
+
+	.home-content h3 {
+		font-size: 20px;
+	}
+
+	.multiple-text {
+		font-size: 22px;
+	}
+
+	.btn-box {
+		width: 70%;
+	}
+
+	.social-btns {
+		justify-content: flex-start;
+	}
+
+	.about {
+		height: 100%;
+		padding: 8rem;
+	}
+
+	.about h2 {
+		font-size: 32px;
+		padding-bottom: 25px;
+	}
+
+	.multiple-text-about {
+		font-size: 38px;
+	}
+
+	.sub-title-about {
+		font-size: 22px;
+		margin-bottom: 20px;
+	}
+
+	.about-content p {
+		font-size: 16px;
+	}
+
+	.slider {
+		height: 900px;
+	}
+
+	.slider .list .item .content h2 {
+		font-size: 50px;
+		padding-top: 25px;
+		padding-bottom: 25px;
+	}
+
+	.slider .list .item .content p {
+		font-size: 15px;
+		line-height: 2;
+	}
+
+	.thumbnail {
+		justify-content: start;
+	}
+
+	.arrows {
+		top: 10%;
+	}
+
+	.social-btns {
+		justify-content: center;
+	}
+
+	.exp-educ {
+		padding: 8rem;
+		flex-direction: column;
+		gap: 8rem;
+	}
+
+	.column1,
+	.column-exp,
+	.column-educ {
+		max-width: 100%;
+	}
+
+	.education-title {
+		font-size: 32px;
+		padding-bottom: 25px;
+	}
+
+	.education-title span {
+		font-size: 38px;
+	}
+
+	.column1 p {
+		font-size: 18px;
+		line-height: 2;
+		padding-bottom: 25px;
+	}
+
+	.btn-exp,
+	.btn-educ {
+		font-size: 16px;
+	}
+
+	.column-exp p,
+	.column-educ p {
+		font-size: 16px;
+		line-height: 2;
+	}
+
+	.column-exp h2,
+	.column-educ h2 {
+		font-size: 30px;
+	}
+
+	.column-exp h2 span,
+	.column-educ h2 span {
+		font-size: 36px;
+	}
+
+	.boxes h3,
+	.boxes span,
+	.boxes p {
+		font-size: 16px;
+	}
+
+	.myskills {
+		padding: 8rem;
+		gap: 2rem;
+		height: fit-content;
+	}
+
+	.sub-title-skills {
+		font-size: 32px;
+	}
+
+	.multiple-text-skills {
+		font-size: 38px;
+	}
+
+	.main-container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.action-container {
+		margin-left: 0;
+		margin-bottom: 2rem;
+		width: 100%;
+	}
+
+	.heading1 {
+		font-size: 30px;
+	}
+
+	.heading1 span {
+		font-size: 32px;
+	}
+
+	.technical-bars .bar .info span {
+		font-size: 18px;
+	}
+
+	.projects {
+		padding: 8rem;
+		gap: 2rem;
+		height: fit-content;
+	}
+
+	.section-title {
+		font-size: 32px;
+		padding-bottom: 25px;
+	}
+
+	.multiple-text {
+		font-size: 38px;
+	}
+
+	.project-card {
+		padding: 2rem;
+		font-size: 16px;
+	}
+
+	.contact {
+		padding: 8rem;
+		height: fit-content;
+	}
+
+	.contact-form {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%;
+	}
+
+	.footer {
+		padding-top: 8rem;
+		height: fit-content;
+	}
+
+	.footer-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.footer-content p {
+		text-align: center;
+		font-size: 16px;
+		line-height: 2;
+	}
+}
+
+/* Estilos para Desktops (1200px e acima) */
+@media (min-width: 992px) and (max-width: 1200px) {
+	.home {
+		padding: 8rem;
+		background-position: right;
+	}
+
+	.home-content h1 {
+		font-size: 56px;
+	}
+
+	.home-content h3 {
+		font-size: 26px;
+	}
+
+	.multiple-text {
+		font-size: 32px;
+	}
+
+	.btn-box {
+		width: 345px;
+	}
+
+	.social-btns {
+		justify-content: flex-start;
+	}
+}
+
+@media (min-width: 1200px) {
+	.home {
+		padding: 10rem;
+		background-position: right;
+	}
+}
+
+/* KEYFRAMES ANIMATION */
+@keyframes showRight {
+	100% {
+		width: 0;
 	}
 }
