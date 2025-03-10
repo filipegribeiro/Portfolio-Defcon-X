@@ -19,6 +19,41 @@ Assigned to:	www.filipegribeiro.com
 
 -------------------------------------------------------------------*/
 
+/** <!-- ************* LOADER ************* --> */
+
+.loader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: #000;
+	color: #aaff00;
+	font-family: 'Fira Code', monospace;
+	font-size: 16px;
+	line-height: 2;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.loader pre {
+	white-space: pre-line;
+	text-align: left;
+	animation: blink 1s infinite step-end;
+}
+
+@keyframes blink {
+	from,
+	to {
+		border-right: 2px solid transparent;
+	}
+	50% {
+		border-right: 2px solid #aaff00;
+	}
+}
+
 /*--------------------------------------------------
 	01. General Settings
 ---------------------------------------------------*/
@@ -335,8 +370,7 @@ li {
 	align-items: left;
 	height: 100vh;
 	margin-top: 2rem;
-	padding-left: 2.5rem;
-	padding-top: 2rem;
+	padding: 8rem;
 	left: 0;
 	right: 0;
 	background: linear-gradient(180deg, #000000 5%, #00000000 40%, #00000000 60%, #000000 92%);
@@ -374,15 +408,15 @@ li {
 .home-content h3 {
 	position: relative;
 	color: #f2f2f2;
-	font-size: 26px;
+	font-size: 28px;
 	font-weight: 700;
 }
 
 /* * * testing multiple text * * */
 
-.multiple-text {
+.home-content .multiple-text {
 	color: #aaff00;
-	font-size: 32px;
+	font-size: 34px;
 	font-weight: 800;
 }
 
@@ -408,7 +442,8 @@ li {
 
 .home-content p {
 	position: relative;
-	font-size: 16px;
+	font-size: 20px;
+	line-height: 2;
 	margin: 20px 0 40px;
 	font-weight: 900;
 }
@@ -506,7 +541,7 @@ li {
 	height: 150vh;
 	display: flex;
 	flex-direction: column;
-	padding-top: 2rem;
+	padding-top: 8rem;
 	left: 0;
 	right: 0;
 	background: linear-gradient(180deg, #000000 5%, #00000000 40%, #00000000 60%, #000000 92%);
@@ -519,7 +554,7 @@ li {
 }
 
 .sub-title-about {
-	font-size: 26px;
+	font-size: 32px;
 	font-weight: 700;
 	color: #f2f2f2;
 	position: relative;
@@ -542,7 +577,7 @@ li {
 
 .multiple-text-about {
 	color: #aaff00;
-	font-size: 32px;
+	font-size: 38px;
 	font-weight: 800;
 }
 
@@ -560,7 +595,8 @@ li {
 
 .about-content p {
 	position: relative;
-	font-size: 16px;
+	font-size: 20px;
+	line-height: 2;
 	margin: 20px 0 40px;
 }
 
@@ -610,6 +646,7 @@ li {
 }
 
 .slider .list .item {
+	padding: 2rem;
 	position: absolute;
 	inset: 0 0 0 0;
 	overflow: hidden;
@@ -639,11 +676,20 @@ li {
 	z-index: 1;
 }
 .slider .list .item .content p:nth-child(1) {
+	font-size: 20px;
+	line-height: 2;
 	text-transform: uppercase;
 	letter-spacing: 6px;
 }
+
+.slider .list .item .content p {
+	font-size: 20px;
+	line-height: 2;
+}
+
 .slider .list .item .content h2 {
-	font-size: 75px;
+	font-size: 56px;
+	line-height: 2;
 	margin: 0;
 }
 .slider .list .item.active {
@@ -742,7 +788,6 @@ li {
 	display: flex;
 	justify-content: center;
 	gap: 10px;
-	margin-top: 50px;
 	height: 75px;
 	width: 300px;
 	margin-left: 0px;
@@ -921,12 +966,26 @@ li {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
+	height: 100vh;
 	gap: 2rem;
 	padding: 2rem;
+	padding-top: 8rem;
 	background-color: #000000;
 	color: #f2f2f2;
 	margin-top: 8rem;
 	margin-bottom: 8rem;
+}
+
+.exp-educ::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background: #141414;
+	animation: showRight 0.5s ease forwards;
+	animation-delay: 0.5s;
 }
 
 .column1,
@@ -942,18 +1001,19 @@ li {
 }
 
 .education-title {
-	font-size: 2rem;
+	font-size: 32px;
 	color: #f2f2f2;
 	margin-bottom: 1rem;
 }
 
 .education-title span {
 	color: #aaff00;
-	font-size: 2.5rem;
+	font-size: 38px;
 }
 
 .column1 p {
-	font-size: 1.2rem;
+	font-size: 20px;
+	line-height: 2;
 	color: #f2f2f2;
 	margin-bottom: 1.5rem;
 }
@@ -967,6 +1027,7 @@ li {
 	font-size: 1rem;
 	color: #141414;
 	background-color: #aaff00;
+	font-weight: bold;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
@@ -994,7 +1055,7 @@ li {
 
 .column-exp h2,
 .column-educ h2 {
-	font-size: 1.5rem;
+	font-size: 28px;
 	color: #f2f2f2;
 	margin-bottom: 1rem;
 }
@@ -1002,19 +1063,20 @@ li {
 .column-exp h2 span,
 .column-educ h2 span {
 	color: #aaff00;
-	font-size: 2rem;
+	font-size: 32px;
 }
 
 .column-exp p,
 .column-educ p {
-	font-size: 1rem;
+	font-size: 20px;
+	line-height: 2;
 	color: #f2f2f2;
 	margin-bottom: 2rem;
 }
 
 /* Main box */
 .main-box {
-	max-height: 300px;
+	max-height: 600px;
 	overflow-y: auto;
 	padding-right: 10px;
 	border: 1px #aaff00 dotted;
@@ -1058,19 +1120,20 @@ li {
 }
 
 .little-title {
-	font-size: 0.9rem;
+	font-size: 14px;
 	color: #aaff00;
 	margin-bottom: 0.25rem;
 }
 
 .main-tittle {
-	font-size: 1.1rem;
+	font-size: 16px;
+	line-height: 2;
 	color: #f2f2f2;
 	font-weight: bold;
 }
 
-.company {
-	font-size: 0.9rem;
+.boxes .company {
+	font-size: 15px;
 	color: #f2f2f2;
 	display: flex;
 	align-items: center;
@@ -1082,57 +1145,18 @@ li {
 	margin-right: 0.5rem;
 }
 
-/* !!!! VERIFICAR ESTE MEDIA QUERIE !!!!! */
-
-/* .home {
-	color: red;
-} */
-
-/* Responsivo */
-@media (max-width: 768px) {
-	.education {
-		flex-direction: column;
-		align-items: center;
-	}
-
-	.column1,
-	.column2.exp,
-	.column2.educ {
-		max-width: 100%;
-	}
-
-	.main-box {
-		flex-direction: column;
-	}
-}
-
 /*--------------------------------------------------
 	06. My Skills Section
 ---------------------------------------------------*/
 
 .myskills {
 	height: 100vh;
-	padding-top: 2rem;
+	padding-top: 8rem;
 	margin-top: 2rem;
-	padding-top: 2rem;
-}
-
-/* !!!! VERIFICAR ESTE MEDIA QUERIE !!!!! */
-
-/* .home {
-	color: red;
-} */
-
-@media screen and (max-width: 980px) {
-	.myskills {
-		height: 125vh;
-		margin-top: 8rem;
-		margin-bottom: 8rem;
-	}
 }
 
 .sub-title-skills {
-	font-size: 26px;
+	font-size: 32px;
 	font-weight: 700;
 	color: #f2f2f2;
 	position: relative;
@@ -1170,25 +1194,9 @@ li {
 	justify-content: center;
 }
 
-/* !!!! VERIFICAR ESTE MEDIA QUERIE !!!!! */
-
-/* .home {
-	color: red;
-} */
-
-@media (max-width: 980px) {
-	.main-container {
-		/* height: 120vh; */
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: column;
-	}
-}
-
 .multiple-text-skills {
 	color: #aaff00;
-	font-size: 32px;
+	font-size: 38px;
 	font-weight: 800;
 }
 
@@ -1209,29 +1217,17 @@ li {
 	margin-left: 90px;
 }
 
-/* !!!! VERIFICAR ESTE MEDIA QUERIE !!!!! */
-
-/* .home {
-	color: red;
-} */
-
-@media (max-width: 980px) {
-	.action-container {
-		margin-bottom: 2rem;
-		padding-bottom: 2rem;
-	}
-}
-
 .heading1 {
 	text-align: center;
 	text-decoration: underline;
 	text-underline-offset: 8px;
 	padding-bottom: 50px;
-	font-size: 26px;
+	font-size: 28px;
 }
 
 .heading1 span {
 	color: #aaff00;
+	font-size: 32px;
 }
 
 .heading1::before {
@@ -1475,8 +1471,8 @@ li {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	font-size: 17px;
-	font-weight: 500;
+	font-size: 16px;
+	font-weight: bold;
 	animation: showText 0.5s 1s linear forwards;
 	opacity: 0;
 }
@@ -1488,7 +1484,7 @@ li {
 	left: 50%;
 	bottom: -5px;
 	transform: translateX(-50%);
-	font-size: 17px;
+	font-size: 16px;
 	font-weight: 500;
 	animation: showText 0.5s 1s linear forwards;
 	opacity: 0;
@@ -1499,30 +1495,25 @@ li {
 ---------------------------------------------------*/
 .projects {
 	height: 120vh;
-}
-
-/* !!!! VERIFICAR ESTE MEDIA QUERIE !!!!! */
-
-/* .home {
-	color: red;
-} */
-
-@media screen and (max-width: 980px) {
-	.projects {
-		height: 135vh;
-		margin-top: 13rem;
-	}
+	padding-top: 8rem;
 }
 
 .section-title {
 	margin: 20px 0 40px;
 	margin-left: 2.5rem;
+	font-size: 32px;
+}
+
+.section-title .multiple-text {
+	color: #aaff00;
+	font-size: 38px;
 }
 
 .project-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	gap: 1.5rem;
+	padding: 2rem;
 }
 
 .project-card {
@@ -1546,20 +1537,8 @@ li {
 }
 
 .project-card img {
-	width: 20vw;
+	width: 16vw;
 	border-radius: 1rem;
-}
-
-/* !!!! VERIFICAR ESTE MEDIA QUERIE !!!!! */
-
-/* .home {
-	color: red;
-} */
-
-@media (min-width: 1090px) {
-	.project-card img {
-		width: 15vw;
-	}
 }
 
 .btn-box-card a {
@@ -1589,7 +1568,6 @@ li {
 	gap: 1rem;
 	width: 150px;
 	height: 125px;
-	margin: 0 auto;
 }
 
 .btn {
@@ -1604,6 +1582,7 @@ li {
 	background-color: #aaff00;
 	border-radius: 5px;
 	font-size: 16px;
+	font-weight: bold;
 	text-align: center;
 }
 
@@ -1624,24 +1603,9 @@ li {
 	font-weight: 800;
 }
 
-.btn-box a {
-	position: relative;
-	display: inline-flex;
-	justify-content: center;
-	align-items: center;
-	width: 150px;
-	height: 100%;
-	background: #aaff00;
-	border: 2px solid #aaff00;
-	border-radius: 8px;
-	font-size: 19px;
-	color: #141414;
-	text-decoration: none;
-	font-weight: 600;
-	letter-spacing: 0.5px;
-	z-index: 1;
-	overflow: hidden;
-	transition: 0.5s;
+.project-card p {
+	font-size: 16px;
+	line-height: 2;
 }
 
 .btn-box a:hover {
@@ -1682,29 +1646,17 @@ li {
 ---------------------------------------------------*/
 
 .contact {
-	height: 80vh;
-	padding-top: 2rem;
+	height: 75vh;
+	padding-top: 4rem;
 	margin-top: 2rem;
 	background: #000000;
 	color: #f2f2f2;
 }
 
-/* !!!! VERIFICAR ESTE MEDIA QUERIE !!!!! */
-
-/* .home {
-	color: red;
-} */
-
-@media screen and (max-width: 980px) {
-	.contact {
-		height: 70vh;
-	}
-}
-
 .sub-title-contact {
 	margin: 20px 0 40px;
 	margin-left: 2.5rem;
-	font-size: 26px;
+	font-size: 32px;
 	font-weight: 700;
 	color: #f2f2f2;
 	position: relative;
@@ -1718,6 +1670,7 @@ li {
 
 .highlight {
 	color: #aaff00;
+	font-size: 38px;
 }
 
 .contact-description {
@@ -1832,6 +1785,7 @@ li {
 	09. Footer
 ---------------------------------------------------*/
 .footer {
+	height: 0vh;
 	padding-top: 2rem;
 	background: #000000;
 	text-align: center;
@@ -1859,43 +1813,6 @@ li {
 	10. Responsiveness (Mobile First)
 ---------------------------------------------------*/
 
-/* HTML configuration size */
-
-@media (max-width: 998px) {
-	html {
-		font-size: 12px;
-		font-weight: bold;
-	}
-}
-
-@media (max-width: 1030px) {
-	html {
-		font-size: 13px;
-		font-weight: bold;
-	}
-}
-
-@media (max-width: 1050px) {
-	html {
-		font-size: 14px;
-		font-weight: bold;
-	}
-}
-
-@media (max-width: 1090px) {
-	html {
-		font-size: 15px;
-		font-weight: bold;
-	}
-}
-
-@media (min-width: 1199px) {
-	html {
-		font-size: 20px;
-		font-weight: bold;
-	}
-}
-
 /* Small Devices (320px - 480px) */
 @media (min-width: 320px) and (max-width: 480px) {
 	html {
@@ -1904,14 +1821,14 @@ li {
 	}
 
 	.logo {
-		font-size: 32px;
+		font-size: 28px;
 	}
 
 	#btn-mobile {
 		display: flex;
 		position: absolute;
 		right: 15px;
-		top: 35px;
+		top: 30px;
 		padding: 0.5rem;
 		font-size: 0.875rem;
 		border: none;
@@ -1926,7 +1843,8 @@ li {
 	}
 
 	.home {
-		padding-top: 8rem;
+		padding-top: 12rem;
+		align-items: center;
 		height: fit-content;
 		flex-direction: column;
 		background-position: center;
@@ -1934,7 +1852,7 @@ li {
 
 	.home-content {
 		padding: 0;
-		width: 100%;
+		width: 180%;
 		margin-top: 1rem;
 		height: fit-content;
 	}
@@ -1966,21 +1884,21 @@ li {
 		flex-direction: column;
 		width: 100%;
 		height: 120px;
-		gap: 1rem;
+		gap: 2.5rem;
 	}
 
 	.about {
-		padding-top: 10rem;
+		padding-top: 12rem;
 		height: fit-content;
 	}
 
 	.about h2 {
-		font-size: 32px;
+		font-size: 22px;
 		padding-bottom: 25px;
 	}
 
 	.multiple-text-about {
-		font-size: 38px;
+		font-size: 26px;
 	}
 
 	.sub-title-about {
@@ -1999,6 +1917,7 @@ li {
 
 	.slider .list .item {
 		height: auto;
+		padding: 2rem;
 	}
 
 	.slider .list .item .content h2 {
@@ -2035,13 +1954,13 @@ li {
 
 	.education-title {
 		text-align: start;
-		font-size: 32px;
+		font-size: 22px;
 		padding-bottom: 25px;
 	}
 
 	.education-title span {
 		text-align: start;
-		font-size: 38px;
+		font-size: 26px;
 	}
 
 	.column1 p {
@@ -2054,19 +1973,18 @@ li {
 	.btn-educ {
 		height: 50px;
 		font-size: 16px;
-		font-weight: bold;
 	}
 
 	.column-exp h2,
 	.column-educ h2 {
 		text-align: center;
-		font-size: 26px;
+		font-size: 20px;
 		padding-bottom: 15px;
 	}
 
 	.column-exp h2 span,
 	.column-educ h2 span {
-		font-size: 32px;
+		font-size: 24px;
 		text-align: center;
 	}
 
@@ -2093,17 +2011,17 @@ li {
 	}
 
 	.myskills {
-		padding-top: 8rem;
+		padding-top: 12rem;
 		height: fit-content;
 	}
 
 	.myskills h1 {
-		font-size: 32px;
+		font-size: 22px;
 		padding-bottom: 25px;
 	}
 
 	.multiple-text-skills {
-		font-size: 38px;
+		font-size: 26px;
 	}
 
 	.main-container {
@@ -2118,11 +2036,11 @@ li {
 	}
 
 	.action-container h2 {
-		font-size: 26px;
+		font-size: 20px;
 	}
 
 	.action-container span {
-		font-size: 32px;
+		font-size: 24px;
 	}
 
 	.technical-bars {
@@ -2130,7 +2048,7 @@ li {
 	}
 
 	.radial-bar .percentage {
-		font-size: 20px;
+		font-size: 16px;
 	}
 
 	.radial-bar .text {
@@ -2144,12 +2062,17 @@ li {
 	}
 
 	.section-title {
-		font-size: 32px;
+		font-size: 22px;
 		padding-bottom: 25px;
 	}
 
-	.multiple-text {
-		font-size: 38px;
+	.projects .multiple-text {
+		font-size: 26px;
+		color: #aaff00;
+	}
+
+	.project-grid {
+		padding: 2rem;
 	}
 
 	.project-card {
@@ -2175,25 +2098,27 @@ li {
 	}
 
 	.contact {
-		padding-top: 8rem;
+		padding-top: 15rem;
 		height: fit-content;
 	}
 
 	.sub-title-contact {
-		font-size: 32px;
+		font-size: 22px;
 		padding-bottom: 25px;
 	}
 
 	.highlight {
-		font-size: 38px;
+		font-size: 26px;
 	}
 
 	.contact-description {
+		padding: 2rem;
 		font-size: 16px;
 		line-height: 2;
 	}
 
 	.contact-form {
+		padding: 2rem;
 		margin-left: 0;
 		margin-right: 0;
 		width: 100%;
@@ -2215,7 +2140,6 @@ li {
 	}
 
 	.footer-content {
-		/* padding-top: 1rem; */
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -2238,19 +2162,18 @@ li {
 	}
 
 	.header {
-		padding: 10px;
 		justify-content: space-between;
 	}
 
 	.logo {
-		font-size: 32px;
+		font-size: 28px;
 	}
 
 	#btn-mobile {
 		display: flex;
 		position: absolute;
 		right: 20px;
-		top: 15px;
+		top: 30px;
 		padding: 0.5rem;
 		font-size: 1rem;
 		border: none;
@@ -2273,7 +2196,7 @@ li {
 		justify-content: center;
 		align-items: center;
 		transition: width 0.6s ease;
-		gap: 5rem;
+		gap: 2.5rem;
 	}
 
 	.home {
@@ -2291,6 +2214,7 @@ li {
 	.home-content p {
 		font-size: 16px;
 		line-height: 2;
+		padding: 2rem;
 	}
 
 	.home-content h1 {
@@ -2298,11 +2222,12 @@ li {
 	}
 
 	.home-content h3 {
-		font-size: 20px;
+		padding-top: 16px;
+		font-size: 26px;
 	}
 
-	.multiple-text {
-		font-size: 22px;
+	.home-content .multiple-text {
+		font-size: 28px;
 	}
 
 	.btn-box {
@@ -2315,7 +2240,7 @@ li {
 
 	.about {
 		height: fit-content;
-		padding-top: 8rem;
+		padding-top: 11rem;
 	}
 
 	.about h2 {
@@ -2323,13 +2248,13 @@ li {
 		padding-bottom: 25px;
 	}
 
-	.multiple-text-about {
-		font-size: 38px;
-	}
-
-	.sub-title-about {
+	.about-content .sub-title-about {
 		font-size: 22px;
 		margin-bottom: 20px;
+	}
+
+	.multiple-text-about {
+		font-size: 26px;
 	}
 
 	.about-content p {
@@ -2339,6 +2264,10 @@ li {
 
 	.slider {
 		height: 900px;
+	}
+
+	.slider .list .item {
+		padding: 2rem;
 	}
 
 	.slider .list .item .content h2 {
@@ -2361,7 +2290,7 @@ li {
 	}
 
 	.exp-educ {
-		padding-top: 8rem;
+		padding-top: 9rem;
 		height: fit-content;
 		flex-direction: column;
 		gap: 8rem;
@@ -2374,12 +2303,12 @@ li {
 	}
 
 	.education-title {
-		font-size: 32px;
+		font-size: 22px;
 		padding-bottom: 25px;
 	}
 
 	.education-title span {
-		font-size: 38px;
+		font-size: 26px;
 	}
 
 	.column1 p {
@@ -2387,10 +2316,13 @@ li {
 		line-height: 2;
 	}
 
+	.main-box {
+		max-height: 300px;
+	}
+
 	.btn-exp,
 	.btn-educ {
 		font-size: 16px;
-		font-weight: bold;
 	}
 
 	.column-exp p,
@@ -2401,13 +2333,13 @@ li {
 
 	.column-exp h2,
 	.column-educ h2 {
-		font-size: 28px;
+		font-size: 20px;
 		padding-bottom: 25px;
 	}
 
 	.column-exp h2 span,
 	.column-educ h2 span {
-		font-size: 32px;
+		font-size: 24px;
 	}
 
 	.boxes h3,
@@ -2417,12 +2349,17 @@ li {
 	}
 
 	.myskills {
-		padding-top: 6rem;
+		padding-top: 8rem;
 		height: fit-content;
 	}
 
 	.sub-title-skills {
 		padding-bottom: 25px;
+		font-size: 22px;
+	}
+
+	.multiple-text-skills {
+		font-size: 26px;
 	}
 
 	.main-container {
@@ -2437,19 +2374,23 @@ li {
 	}
 
 	.heading1 {
-		font-size: 28px;
+		font-size: 20px;
 	}
 
 	.heading1 span {
-		font-size: 32px;
+		font-size: 24px;
+	}
+
+	.technical-bars {
+		padding: 2rem;
 	}
 
 	.technical-bars .bar .info span {
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	.radial-bar .text {
-		font-size: 18px;
+		font-size: 16px;
 	}
 
 	.projects {
@@ -2459,12 +2400,17 @@ li {
 	}
 
 	.section-title {
-		font-size: 32px;
+		font-size: 22px;
 		padding-bottom: 25px;
 	}
 
-	.multiple-text {
-		font-size: 38px;
+	.section-title .multiple-text {
+		font-size: 26px;
+		color: #aaff00;
+	}
+
+	.project-grid {
+		padding: 2rem;
 	}
 
 	.project-card {
@@ -2473,7 +2419,7 @@ li {
 	}
 
 	.project-card img {
-		width: 30vw;
+		width: 26vw;
 	}
 
 	.btn-group {
@@ -2481,31 +2427,34 @@ li {
 	}
 
 	.contact {
-		padding-top: 3rem;
+		padding-top: 8rem;
 		height: fit-content;
 	}
 
 	.sub-title-contact {
-		font-size: 32px;
-		padding-bottom: 25px;
+		font-size: 22px;
+		padding-bottom: 16px;
 	}
 
 	.highlight {
-		font-size: 38px;
+		font-size: 26px;
 	}
 
 	.contact-description {
+		padding: 2rem;
 		line-height: 2;
+		font-size: 16px;
 	}
 
 	.contact-form {
+		padding: 1rem;
 		margin-left: 0;
 		margin-right: 0;
 		width: 100%;
 	}
 
 	.footer {
-		padding-top: 8rem;
+		padding-top: 5rem;
 		height: fit-content;
 	}
 
@@ -2526,11 +2475,19 @@ li {
 /* Estilos para Tablets (768px até 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
 	.home {
-		padding: 8rem;
+		padding-top: 8rem;
 		margin-top: 12rem;
 		background-position: center;
 		height: auto;
 		flex-direction: column;
+	}
+
+	#btn-mobile {
+		top: 35px;
+	}
+
+	.logo {
+		font-size: 28px;
 	}
 
 	.home-content {
@@ -2547,7 +2504,7 @@ li {
 		font-size: 20px;
 	}
 
-	.multiple-text {
+	.home-content .multiple-text {
 		font-size: 22px;
 	}
 
@@ -2561,7 +2518,7 @@ li {
 
 	.about {
 		height: 100%;
-		padding: 8rem;
+		padding-top: 8rem;
 	}
 
 	.about h2 {
@@ -2586,6 +2543,10 @@ li {
 		height: 900px;
 	}
 
+	.slider .list .item {
+		padding: 2rem;
+	}
+
 	.slider .list .item .content h2 {
 		font-size: 50px;
 		padding-top: 25px;
@@ -2598,7 +2559,7 @@ li {
 	}
 
 	.thumbnail {
-		justify-content: start;
+		justify-content: center;
 	}
 
 	.arrows {
@@ -2610,7 +2571,7 @@ li {
 	}
 
 	.exp-educ {
-		padding: 8rem;
+		padding-top: 12rem;
 		flex-direction: column;
 		gap: 8rem;
 	}
@@ -2657,6 +2618,11 @@ li {
 		font-size: 36px;
 	}
 
+	.main-box {
+		padding: 2rem;
+		max-height: 325px;
+	}
+
 	.boxes h3,
 	.boxes span,
 	.boxes p {
@@ -2664,7 +2630,7 @@ li {
 	}
 
 	.myskills {
-		padding: 8rem;
+		padding-top: 8rem;
 		gap: 2rem;
 		height: fit-content;
 	}
@@ -2678,6 +2644,7 @@ li {
 	}
 
 	.main-container {
+		padding: 2rem;
 		flex-direction: column;
 		align-items: center;
 	}
@@ -2689,6 +2656,7 @@ li {
 	}
 
 	.heading1 {
+		padding-top: 3rem;
 		font-size: 30px;
 	}
 
@@ -2701,7 +2669,7 @@ li {
 	}
 
 	.projects {
-		padding: 8rem;
+		padding-top: 8rem;
 		gap: 2rem;
 		height: fit-content;
 	}
@@ -2713,6 +2681,11 @@ li {
 
 	.multiple-text {
 		font-size: 38px;
+		color: #aaff00;
+	}
+
+	.project-grid {
+		padding: 2rem;
 	}
 
 	.project-card {
@@ -2721,18 +2694,19 @@ li {
 	}
 
 	.contact {
-		padding: 8rem;
+		padding-top: 6rem;
 		height: fit-content;
 	}
 
 	.contact-form {
+		padding: 2rem;
 		margin-left: 0;
 		margin-right: 0;
 		width: 100%;
 	}
 
 	.footer {
-		padding-top: 8rem;
+		padding-top: 2rem;
 		height: fit-content;
 	}
 
@@ -2773,15 +2747,173 @@ li {
 		width: 345px;
 	}
 
-	.social-btns {
-		justify-content: flex-start;
+	.about {
+		padding-top: 8rem;
+		height: fit-content;
 	}
-}
 
-@media (min-width: 1200px) {
-	.home {
-		padding: 10rem;
-		background-position: right;
+	.sub-title-about {
+		font-size: 32px;
+		padding-bottom: 25px;
+	}
+
+	.multiple-text-about {
+		font-size: 38px;
+	}
+
+	.slider .list .item {
+		padding: 2rem;
+	}
+
+	.slider .list .item .content h2 {
+		line-height: 2;
+	}
+
+	.social-btns {
+		justify-content: center;
+	}
+
+	.exp-educ {
+		padding-top: 8rem;
+		height: fit-content;
+	}
+
+	.education-title {
+		font-size: 32px;
+		padding-bottom: 25px;
+	}
+
+	.education-title span {
+		font-size: 38px;
+	}
+
+	.column1 p {
+		font-size: 18px;
+		line-height: 2;
+	}
+
+	.column-exp h2,
+	.column-educ h2 {
+		font-size: 30px;
+	}
+
+	.column-exp h2 span,
+	.column-educ h2 span {
+		font-size: 32px;
+	}
+
+	.column-exp p,
+	.column-educ p {
+		font-size: 18px;
+		line-height: 2;
+	}
+
+	.little-title {
+		font-size: 16px;
+	}
+
+	.main-tittle {
+		font-size: 18px;
+	}
+
+	.main-box {
+		max-height: 500px;
+	}
+
+	.main-box .boxes .company {
+		font-size: 14px;
+		height: fit-content;
+	}
+
+	.myskills {
+		padding-top: 8rem;
+		height: fit-content;
+	}
+
+	.sub-title-skills {
+		font-size: 32px;
+		padding-bottom: 25px;
+	}
+
+	.myskills .multiple-text-skills {
+		font-size: 38px;
+	}
+
+	.main-container .action-container .heading1 {
+		font-size: 30px;
+	}
+
+	.main-container .action-container .heading1 span {
+		font-size: 32px;
+	}
+
+	.technical-bars .bar .info span {
+		font-size: 18px;
+	}
+
+	.radial-bar .text,
+	.radial-bar .percentage {
+		font-size: 18px;
+	}
+
+	.projects {
+		padding-top: 8rem;
+		height: fit-content;
+	}
+
+	.section-title {
+		font-size: 32px;
+		padding-bottom: 25px;
+	}
+
+	.section-title .multiple-text {
+		font-size: 38px;
+		color: #aaff00;
+	}
+
+	.project-grid {
+		padding: 2rem;
+	}
+
+	@media (min-width: 1090px) {
+		.project-card img {
+			width: 15vw;
+		}
+	}
+
+	.contact {
+		height: fit-content;
+	}
+
+	.sub-title-contact {
+		font-size: 32px;
+		padding-bottom: 25px;
+	}
+
+	.highlight {
+		font-size: 38px;
+	}
+
+	.contact-description {
+		font-size: 18px;
+		line-height: 2;
+	}
+
+	.contact-form .form-group label {
+		font-size: 18px;
+	}
+
+	.submit-btn {
+		font-size: 18px;
+	}
+
+	.footer {
+		padding-top: 2rem;
+		height: fit-content;
+	}
+
+	.footer-content p {
+		font-size: 18px;
 	}
 }
 
